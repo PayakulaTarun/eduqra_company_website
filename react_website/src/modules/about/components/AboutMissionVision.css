@@ -1,0 +1,71 @@
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.mv-card {
+  background: white;
+  padding: 50px;
+  border-radius: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.mv-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.mission-icon {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.vision-icon {
+  background-color: #22C55E;
+  color: white;
+}
+
+.mv-card h3 {
+  font-size: 1.75rem;
+  margin-bottom: 20px;
+}
+
+.mv-card p {
+  color: var(--color-text-light);
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.mv-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mv-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 500;
+  color: var(--color-secondary);
+}
+
+.check-icon {
+  color: var(--color-primary);
+}
+
+.vision .check-icon {
+  color: #22C55E;
+}
+
+@media (max-width: 768px) {
+  .mv-grid {
+    grid-template-columns: 1fr;
+  }
+}

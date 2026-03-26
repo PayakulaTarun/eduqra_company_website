@@ -1,0 +1,113 @@
+.solutions-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.solutions-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.solutions-desc {
+  color: var(--color-text-light);
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.check-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.check-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-secondary);
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.check-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #DEF7EC;
+  color: var(--color-success);
+  font-size: 0.8rem;
+}
+
+.solutions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.solution-card {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  border: 1px solid #E2E8F0;
+  transition: all 0.3s ease;
+}
+
+.solution-card:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border-color: transparent;
+  transform: translateY(-5px);
+}
+
+.solution-card .icon-wrapper {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.bg-blue { background-color: #3B82F6; }
+.bg-purple { background-color: #8B5CF6; }
+.bg-orange { background-color: #F59E0B; }
+.bg-green { background-color: #10B981; }
+
+.solution-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.solution-card p {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.block-ai-tutor { margin-top: 0; }
+.block-analytics { margin-top: 40px; }
+.block-assessment { margin-top: -20px; }
+.block-personalization { margin-top: 20px; }
+
+@media (max-width: 992px) {
+  .solutions-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .block-ai-tutor,
+  .block-analytics,
+  .block-assessment,
+  .block-personalization {
+    margin-top: 0;
+  }
+}
