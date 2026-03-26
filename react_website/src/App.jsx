@@ -4,6 +4,7 @@ import { AnimatePresence } from 'framer-motion';
 import HomeView from './modules/home/views/HomeView';
 import AboutView from './modules/about/views/AboutView';
 import CoursesView from './modules/courses/views/CoursesView';
+import CourseDetailsView from './modules/courses/views/CourseDetailsView';
 import WebinarsView from './modules/webinars/views/WebinarsView';
 import AISolutionsView from './modules/ai-solutions/views/AISolutionsView';
 import BlogView from './modules/blog/views/BlogView';
@@ -24,6 +25,7 @@ function App() {
           <Route path="/" element={<HomeView />} />
           <Route path="/about" element={<AboutView />} />
           <Route path="/courses" element={<CoursesView />} />
+          <Route path="/courses/:id" element={<CourseDetailsView />} />
           <Route path="/webinars" element={<WebinarsView />} />
           <Route path="/ai-solutions" element={<AISolutionsView />} />
           <Route path="/blog" element={<BlogView />} />

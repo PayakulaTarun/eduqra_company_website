@@ -161,13 +161,15 @@ const CoursesView = () => {
                     <span className="course-rating"><Star size={14} className="star-icon" fill="currentColor" /> {course.rating}</span>
                     <span className="course-students"><Users size={14} /> {course.students} Students</span>
                   </div>
-                  <h3>{course.title}</h3>
+                  <Link to={`/courses/${course.id}`}>
+                    <h3>{course.title}</h3>
+                  </Link>
                   <div className="course-instructor">
                     <span>By {course.instructor}</span>
                   </div>
                   <div className="course-footer">
                     <span className="course-price">{course.price}</span>
-                    <Link to={`/learn/${course.id}`} className="enroll-btn">Enroll Now &rarr;</Link>
+                    <Link to={`/courses/${course.id}`} className="enroll-btn">Enroll Now &rarr;</Link>
                   </div>
                 </div>
               </motion.div>

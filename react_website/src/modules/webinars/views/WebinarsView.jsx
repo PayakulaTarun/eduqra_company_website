@@ -1,37 +1,53 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, User, ArrowRight, PlayCircle } from 'lucide-react';
+import { Calendar, User, Clock, Search, Play } from 'lucide-react';
 import './WebinarsView.css';
 
-const webinarsData = [
+const upcomingWebinars = [
   {
     id: 1,
-    title: 'The Future of Generative AI in Business',
-    date: { day: '25', month: 'MAR' },
-    speaker: 'Dr. Sarah Wilson',
-    description: 'Learn how to leverage LLMs and stable diffusion to automate workflows and create value.',
-    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    type: 'Upcoming'
+    title: 'The Future Of Generative AI In Business',
+    date: 'March 25, 2026',
+    time: '10:00 AM EST',
+    speaker: 'Dr. Aris Thorne',
+    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    isLive: true
   },
   {
     id: 2,
-    title: 'Mastering Data Visualization with AI',
-    date: { day: '28', month: 'MAR' },
-    speaker: 'Mr. James Miller',
-    description: 'Transform complex data into actionable insights using AI-driven visualization tools.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    type: 'Upcoming'
+    title: 'Mastering Data Visualization With AI',
+    date: 'March 25, 2026',
+    time: '10:00 AM EST',
+    speaker: 'Dr. Aris Thorne',
+    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    isLive: false
   },
   {
     id: 3,
-    title: 'Cybersecurity Trends in 2026',
-    date: { day: '02', month: 'APR' },
-    speaker: 'Mr. Kevin Zhang',
-    description: 'Stay ahead of emerging threats and learn how AI is being used in modern security.',
-    image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-    type: 'Upcoming'
+    title: 'Building Scalable AI Infrastructure',
+    date: 'March 25, 2026',
+    time: '10:00 AM EST',
+    speaker: 'Dr. Aris Thorne',
+    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    isLive: false
+  },
+  {
+    id: 4,
+    title: 'AI Ethics: Navigating The New Frontier',
+    date: 'March 25, 2026',
+    time: '10:00 AM EST',
+    speaker: 'Dr. Aris Thorne',
+    image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    isLive: false
   }
 ];
+
+const pastWebinars = [1, 2, 3, 4].map(id => ({
+  id,
+  title: 'How To Build Your First Neural Network With Python',
+  date: 'Feb 12, 2026',
+  image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80'
+}));
 
 const WebinarsView = () => {
   return (
@@ -41,75 +57,100 @@ const WebinarsView = () => {
       exit={{ opacity: 0 }}
       className="webinars-page"
     >
+      {/* Hero Section */}
       <section className="webinars-hero">
         <div className="container">
-          <motion.h1 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="section-title"
-          >
-            Join Expert-Led Live Webinars
-          </motion.h1>
-          <motion.p 
+          <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="webinars-subtitle"
+            className="hero-content centered-hero"
           >
-            Upgrade your skills with real-time interaction. Our webinars cover the latest trends in AI, tech, and career growth.
-          </motion.p>
+            <h1 className="webinars-title">Expert-Led Live Webinars</h1>
+            <p className="webinars-subtitle">
+              Join our live sessions to learn from industry experts and stay ahead in the rapidly evolving world of AI and technology.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      <section className="webinars-list section">
+      {/* Upcoming Section */}
+      <section className="upcoming-section">
         <div className="container">
-          <div className="webinar-cards">
-            {webinarsData.map((webinar, index) => (
-              <motion.div 
+          <div className="section-header-row">
+            <h2 className="section-title-alt">Upcoming Webinars</h2>
+            <div className="search-bar-webinar">
+              <Search size={16} className="search-icon" />
+              <input type="text" placeholder="Search webinars..." />
+            </div>
+          </div>
+
+          <div className="upcoming-grid">
+            {upcomingWebinars.map((webinar) => (
+              <motion.article 
                 key={webinar.id}
-                initial={{ opacity: 0, x: -30 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="webinar-row"
+                className="webinar-card"
               >
-                <div className="webinar-date-badge">
-                  <span className="day">{webinar.date.day}</span>
-                  <span className="month">{webinar.date.month}</span>
+                <div className="webinar-thumb">
+                  <img src={webinar.image} alt={webinar.title} />
+                  {webinar.isLive && <span className="live-pill">Live Session</span>}
                 </div>
-                
-                <div className="webinar-info">
-                  <div className="info-top">
-                    <span className="webinar-type">{webinar.type}</span>
-                    <span className="webinar-speaker"><User size={14} /> {webinar.speaker}</span>
+                <div className="webinar-card-content">
+                  <div className="meta-date">
+                    <Calendar size={14} className="meta-icon" />
+                    <span>{webinar.date}</span>
                   </div>
                   <h3>{webinar.title}</h3>
-                  <p>{webinar.description}</p>
+                  <div className="meta-details">
+                    <div className="meta-item">
+                      <Clock size={14} />
+                      <span>{webinar.time}</span>
+                    </div>
+                    <div className="meta-item">
+                      <User size={14} />
+                      <span>{webinar.speaker}</span>
+                    </div>
+                  </div>
+                  <button className="btn btn-primary register-now-btn">Register Now</button>
                 </div>
-                
-                <div className="webinar-action">
-                  <button className="btn btn-outline register-btn">
-                    Register Now <ArrowRight size={18} />
-                  </button>
+              </motion.article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Past Section */}
+      <section className="past-section">
+        <div className="container">
+          <h2 className="section-title-alt">Watch Past Webinars</h2>
+          <div className="past-webinars-grid">
+            {pastWebinars.map((webinar) => (
+              <motion.div 
+                key={webinar.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="past-webinar-card"
+              >
+                <div className="video-thumb">
+                  <img src={webinar.image} alt={webinar.title} />
+                  <div className="play-overlay">
+                    <div className="play-btn-circle">
+                      <Play fill="#000" size={20} />
+                    </div>
+                  </div>
+                </div>
+                <div className="past-info">
+                  <h4>{webinar.title}</h4>
+                  <p>Recorded on {webinar.date}</p>
                 </div>
               </motion.div>
             ))}
           </div>
-
-          <div className="recorded-section">
-            <h2 className="section-title" style={{ textAlign: 'left', marginTop: '60px' }}>Recorded Webinars</h2>
-            <div className="recorded-grid">
-              {[1, 2, 3].map((_, i) => (
-                <div key={i} className="recorded-card">
-                  <div className="thumb">
-                    <img src={`https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80`} alt="Recorded" />
-                    <PlayCircle className="play-icon" size={48} />
-                  </div>
-                  <h4>Mastering Python Analytics</h4>
-                  <p>Aired on Feb 20, 2026</p>
-                </div>
-              ))}
-            </div>
+          <div className="text-center browse-all-row">
+            <button className="btn btn-outline browse-all-btn">Browse All Recordings</button>
           </div>
         </div>
       </section>
