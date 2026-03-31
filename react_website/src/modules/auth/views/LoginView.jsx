@@ -13,8 +13,8 @@ const LoginView = () => {
       className="auth-wrapper"
     >
       <div className="auth-container">
-        <Link to="/" className="back-link"><ArrowLeft size={18} /> Back to Home</Link>
         <div className="auth-card">
+          <Link to="/" className="back-link"><ArrowLeft size={18} /> Back to Home</Link>
           <div className="auth-header">
             <h2>Welcome Back</h2>
             <p>Login to your account to continue your learning journey.</p>
