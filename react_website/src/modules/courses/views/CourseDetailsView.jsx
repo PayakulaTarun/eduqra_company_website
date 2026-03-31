@@ -14,7 +14,7 @@ const courseDetails = {
   duration: "12 Weeks",
   students: "1,240 Students",
   rating: "4.9 (450 Reviews)",
-  price: "$49.99",
+  price: "₹4,150",
   instructor: {
     name: "Dr. Aris Thorne",
     title: "Senior AI Researcher & Educator",

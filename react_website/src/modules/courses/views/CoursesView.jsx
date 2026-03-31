@@ -11,7 +11,7 @@ const coursesData = [
     category: 'Artificial Intelligence',
     rating: 4.9,
     students: '1.2k',
-    price: '$49.99',
+    price: '₹4,150',
     image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     instructor: 'Dr. Sarah Wilson'
   },
@@ -21,7 +21,7 @@ const coursesData = [
     category: 'Data Science',
     rating: 4.8,
     students: '2.5k',
-    price: '$39.99',
+    price: '₹3,320',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     instructor: 'Mr. James Miller'
   },
@@ -31,7 +31,7 @@ const coursesData = [
     category: 'Development',
     rating: 4.9,
     students: '1.8k',
-    price: '$59.99',
+    price: '₹4,980',
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     instructor: 'Ms. Emily Chen'
   },
@@ -41,7 +41,7 @@ const coursesData = [
     category: 'Artificial Intelligence',
     rating: 4.7,
     students: '900+',
-    price: '$45.00',
+    price: '₹3,735',
     image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     instructor: 'Prof. Alan Turing Jr.'
   },
@@ -51,7 +51,7 @@ const coursesData = [
     category: 'Data Science',
     rating: 4.9,
     students: '3k+',
-    price: '$29.99',
+    price: '₹2,490',
     image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     instructor: 'Mr. Kevin Zhang'
   },
@@ -61,7 +61,7 @@ const coursesData = [
     category: 'Business',
     rating: 4.6,
     students: '1.1k',
-    price: '$69.99',
+    price: '₹5,810',
     image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
     instructor: 'Ms. Linda Ford'
   }

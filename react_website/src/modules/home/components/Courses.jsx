@@ -9,7 +9,7 @@ const courses = [
     title: 'AI & Machine Learning',
     students: '1.2k Students',
     rating: 4.9,
-    price: '$49.99',
+    price: '₹4,150',
     image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
   },
   {
@@ -17,7 +17,7 @@ const courses = [
     title: 'Data Science Masterclass',
     students: '1.2k Students',
     rating: 4.8,
-    price: '$49.99',
+    price: '₹4,150',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
   },
   {
@@ -25,7 +25,7 @@ const courses = [
     title: 'Advanced Web Development',
     students: '1.2k Students',
     rating: 4.8,
-    price: '$49.99',
+    price: '₹4,150',
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
   }
 ];
