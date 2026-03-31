@@ -1,9 +1,9 @@
 .courses-page {
-  padding-top: 20px;
+  padding-top: 0;
 }
 
 .courses-hero {
-  padding: 40px 0 40px;
+  padding: 20px 0 40px;
   background-color: var(--color-bg-alt);
   text-align: center;
 }

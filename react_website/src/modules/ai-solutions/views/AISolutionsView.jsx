@@ -54,66 +54,44 @@ const AISolutionsView = () => {
             </p>
           </motion.div>
           
-          <div className="features-offset-grid">
-            <div className="feature-column">
-              {[
-                { 
-                  icon: <Activity size={24} />, colorClass: 'bg-blue', 
-                  title: 'AI Tutor', 
-                  desc: 'Advanced AI algorithms to optimize your ai tutor experience.'
-                },
-                { 
-                  icon: <Activity size={24} />, colorClass: 'bg-orange', 
-                  title: 'Assessment', 
-                  desc: 'Advanced AI algorithms to optimize your assessment experience.'
-                }
-              ].map((tool, i) => (
-                <motion.div 
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="premium-feature-card"
-                >
-                  <div className={`icon-square ${tool.colorClass}`}>
-                    {tool.icon}
-                  </div>
-                  <h3>{tool.title}</h3>
-                  <p>{tool.desc}</p>
-                </motion.div>
-              ))}
-            </div>
-            
-            <div className="feature-column offset-top">
-              {[
-                { 
-                  icon: <Activity size={24} />, colorClass: 'bg-purple', 
-                  title: 'Analytics', 
-                  desc: 'Advanced AI algorithms to optimize your analytics experience.'
-                },
-                { 
-                  icon: <Activity size={24} />, colorClass: 'bg-green', 
-                  title: 'Personalization', 
-                  desc: 'Advanced AI algorithms to optimize your personalization experience.'
-                }
-              ].map((tool, i) => (
-                <motion.div 
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 + 0.2 }}
-                  className="premium-feature-card"
-                >
-                  <div className={`icon-square ${tool.colorClass}`}>
-                    {tool.icon}
-                  </div>
-                  <h3>{tool.title}</h3>
-                  <p>{tool.desc}</p>
-                </motion.div>
-              ))}
-            </div>
+          <div className="features-solutions-grid">
+            {[
+              { 
+                icon: <Activity size={24} />, colorClass: 'bg-blue', 
+                title: 'AI Tutor', 
+                desc: 'Advanced AI algorithms to optimize your ai tutor experience. Personalized learning paths built for individual needs.'
+              },
+              { 
+                icon: <Activity size={24} />, colorClass: 'bg-purple', 
+                title: 'Analytics', 
+                desc: 'Advanced AI algorithms to optimize your analytics experience. Real-time data processing for actionable insights.'
+              },
+              { 
+                icon: <Activity size={24} />, colorClass: 'bg-orange', 
+                title: 'Assessment', 
+                desc: 'Advanced AI algorithms to optimize your assessment experience. Smart testing that adapts to learner capability.'
+              },
+              { 
+                icon: <Activity size={24} />, colorClass: 'bg-green', 
+                title: 'Personalization', 
+                desc: 'Advanced AI algorithms to optimize your personalization experience. Dynamic content adjustments for better retention.'
+              }
+            ].map((tool, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="premium-feature-card"
+              >
+                <div className={`icon-square ${tool.colorClass}`}>
+                  {tool.icon}
+                </div>
+                <h3>{tool.title}</h3>
+                <p>{tool.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
