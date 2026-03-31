@@ -154,6 +154,12 @@ img {
   animation: fadeUp 0.6s ease forwards;
 }
 
+
+/* Utility Classes */
+.text-center { text-align: center !important; }
+.text-left { text-align: left !important; }
+.text-right { text-align: right !important; }
+
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   .section {
