@@ -15,10 +15,12 @@ import LoginView from './modules/auth/views/LoginView';
 import SignUpView from './modules/auth/views/SignUpView';
 import Navbar from './shared/components/Navbar';
 import Footer from './shared/components/Footer';
+import ScrollToTop from './shared/components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <AnimatePresence mode="wait">
         <Routes>
