@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, Send, Globe, Share2, Camera } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, Globe } from 'lucide-react';
+import { InstagramIcon, FacebookIcon, WhatsAppIcon, TelegramIcon } from '../../../shared/components/SocialIcons';
 import './ContactView.css';
 
 const ContactView = () => {
@@ -67,10 +68,10 @@ const ContactView = () => {
               <div className="social-connect">
                 <h3>Follow Us</h3>
                 <div className="social-icons">
-                  <a href="#"><Globe /></a>
-                  <a href="#"><Send /></a>
-                  <a href="#"><Share2 /></a>
-                  <a href="#"><Camera /></a>
+                  <a href="#"><InstagramIcon size={24} /></a>
+                  <a href="#"><FacebookIcon size={24} /></a>
+                  <a href="#"><WhatsAppIcon size={24} /></a>
+                  <a href="#"><TelegramIcon size={24} /></a>
                 </div>
               </div>
             </motion.div>

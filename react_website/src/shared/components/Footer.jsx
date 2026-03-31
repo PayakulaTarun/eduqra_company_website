@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, Globe, Send, Share2, Camera } from 'lucide-react';
+import { InstagramIcon, FacebookIcon, WhatsAppIcon, TelegramIcon } from './SocialIcons';
+import { Phone, Mail, MapPin } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
@@ -11,10 +12,10 @@ const Footer = () => {
           <img src="/images/eduqra_logo_1774263954243.png" alt="Eduqra" className="footer-logo" style={{ filter: 'brightness(0) invert(1)' }} />
           <p>AI-Powered Learning For Future Skills. Master AI, Data Science, and career-focused skills with personalized learning experiences.</p>
           <div className="social-links">
-            <a href="#"><span><Globe size={18} /></span></a>
-            <a href="#"><span><Send size={18} /></span></a>
-            <a href="#"><span><Share2 size={18} /></span></a>
-            <a href="#"><span><Camera size={18} /></span></a>
+            <a href="#"><span><InstagramIcon size={20} /></span></a>
+            <a href="#"><span><FacebookIcon size={20} /></span></a>
+            <a href="#"><span><WhatsAppIcon size={20} /></span></a>
+            <a href="#"><span><TelegramIcon size={20} /></span></a>
           </div>
           <p className="copyright">&copy; 2026 Eduqra Technologies. All rights reserved.</p>
         </div>
