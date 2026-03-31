@@ -54,50 +54,66 @@ const AISolutionsView = () => {
             </p>
           </motion.div>
           
-          <div className="tools-grid-solutions">
-            {[
-              { 
-                icon: <Activity size={32} />, colorClass: 'icon-blue', 
-                title: 'AI Personal Tutor', 
-                desc: 'A 24/7 companion that answers questions, explains complex topics, and provides personalized feedback on your assignments.',
-                list: ['Real-Time Q&A', 'Concept Simplification', 'Personalized Feedback']
-              },
-              { 
-                icon: <Network size={32} />, colorClass: 'icon-green', 
-                title: 'Learning Analytics', 
-                desc: 'Deep insights into your learning patterns. Identify strengths, weaknesses, and get data-driven suggestions for improvement.',
-                list: ['Progress Tracking', 'Skill Gap Analysis', 'Predictive Performance']
-              },
-              { 
-                icon: <Zap size={32} />, colorClass: 'icon-orange', 
-                title: 'Adaptive Learning', 
-                desc: 'Our system adjusts the difficulty and content of your courses in real-time based on your performance and pace.',
-                list: ['Dynamic Curriculum', 'Pace Adjustment', 'Customized Exercises']
-              }
-            ].map((tool, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.15 }}
-                className="solution-tool-card"
-              >
-                <div className={`tool-icon-circle ${tool.colorClass}`}>
-                  {tool.icon}
-                </div>
-                <h3>{tool.title}</h3>
-                <p className="tool-card-desc">{tool.desc}</p>
-                <div className="card-divider" />
-                <ul className="tool-feature-list">
-                  {tool.list.map((item, idx) => (
-                    <li key={idx}>
-                      <CheckCircle2 size={18} className="success-check" /> {item}
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-            ))}
+          <div className="features-offset-grid">
+            <div className="feature-column">
+              {[
+                { 
+                  icon: <Activity size={24} />, colorClass: 'bg-blue', 
+                  title: 'AI Tutor', 
+                  desc: 'Advanced AI algorithms to optimize your ai tutor experience.'
+                },
+                { 
+                  icon: <Activity size={24} />, colorClass: 'bg-orange', 
+                  title: 'Assessment', 
+                  desc: 'Advanced AI algorithms to optimize your assessment experience.'
+                }
+              ].map((tool, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="premium-feature-card"
+                >
+                  <div className={`icon-square ${tool.colorClass}`}>
+                    {tool.icon}
+                  </div>
+                  <h3>{tool.title}</h3>
+                  <p>{tool.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+            
+            <div className="feature-column offset-top">
+              {[
+                { 
+                  icon: <Activity size={24} />, colorClass: 'bg-purple', 
+                  title: 'Analytics', 
+                  desc: 'Advanced AI algorithms to optimize your analytics experience.'
+                },
+                { 
+                  icon: <Activity size={24} />, colorClass: 'bg-green', 
+                  title: 'Personalization', 
+                  desc: 'Advanced AI algorithms to optimize your personalization experience.'
+                }
+              ].map((tool, i) => (
+                <motion.div 
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 + 0.2 }}
+                  className="premium-feature-card"
+                >
+                  <div className={`icon-square ${tool.colorClass}`}>
+                    {tool.icon}
+                  </div>
+                  <h3>{tool.title}</h3>
+                  <p>{tool.desc}</p>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>

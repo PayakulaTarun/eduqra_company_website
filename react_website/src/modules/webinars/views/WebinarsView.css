@@ -3,7 +3,11 @@
 }
 
 .webinars-hero {
-  padding: 80px 0 40px;
+  padding: 40px 0 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -12,6 +16,7 @@
   font-weight: 800;
   color: var(--color-secondary);
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .webinars-subtitle {
@@ -20,6 +25,7 @@
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
+  text-align: center;
 }
 
 /* Upcoming Section */

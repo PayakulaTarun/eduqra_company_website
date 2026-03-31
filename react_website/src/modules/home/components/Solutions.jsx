@@ -1,9 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Stethoscope } from 'lucide-react';
+import { Bot, Users, BarChart, PlayCircle } from 'lucide-react';
 import './Solutions.css';
 
 const Solutions = () => {
+  const cards = [
+    { title: 'AI Tutor', text: 'An AI tutor will guide you every step you take towards your learning.', color: 'bg-blue', icon: <Bot size={24} />, delay: 0.1 },
+    { title: 'Mentorship', text: 'Access to 1-on-1 expert mentorship to guide you efficiently.', color: 'bg-purple', icon: <Users size={24} />, delay: 0.2 },
+    { title: 'Assessment', text: 'Advanced algorithms to track your performance and speed.', color: 'bg-orange', icon: <BarChart size={24} />, delay: 0.3 },
+    { title: 'Masterclasses', text: 'Access to masterclasses for free and premium resources.', color: 'bg-green', icon: <PlayCircle size={24} />, delay: 0.4 }
+  ];
+
   return (
     <section className="solutions section" id="ai-solutions">
       <div className="container solutions-container">
@@ -41,22 +48,17 @@ const Solutions = () => {
         </motion.div>
         
         <div className="solutions-grid">
-          {[
-            { title: 'AI Tutor', text: 'An AI tutor will guide you every step you take towards your learning.', color: 'bg-blue', delay: 0.1 },
-            { title: 'Mentorship', text: 'Access to 1-on-1 expert mentorship to guide you efficiently.', color: 'bg-purple', delay: 0.2 },
-            { title: 'Assessment', text: 'Advanced algorithms to track your performance and speed.', color: 'bg-orange', delay: 0.3 },
-            { title: 'Masterclasses', text: 'Access to masterclasses for free and premium resources.', color: 'bg-green', delay: 0.4 }
-          ].map((card, i) => (
+          {cards.map((card, i) => (
             <motion.div 
               key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: card.delay }}
-              className={`solution-card block-${card.title.toLowerCase()}`}
+              className="solution-card"
             >
               <div className={`icon-wrapper ${card.color}`}>
-                <Stethoscope size={24} />
+                {card.icon}
               </div>
               <h4>{card.title}</h4>
               <p>{card.text}</p>

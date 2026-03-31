@@ -54,60 +54,61 @@
 .solution-card {
   background: white;
   padding: 32px;
-  border-radius: 16px;
-  border: 1px solid #E2E8F0;
-  transition: all 0.3s ease;
+  border-radius: 20px;
+  border: 1px solid #F1F5F9;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .solution-card:hover {
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  border-color: transparent;
-  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  border-color: #E2E8F0;
+  transform: translateY(-8px);
 }
 
 .solution-card .icon-wrapper {
-  width: 50px;
-  height: 50px;
-  border-radius: 12px;
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  margin-bottom: 20px;
-  font-size: 1.2rem;
+  margin-bottom: 24px;
+  font-size: 1.4rem;
+  box-shadow: 0 8px 15px -4px rgba(0, 0, 0, 0.1);
 }
 
-.bg-blue { background-color: #3B82F6; }
-.bg-purple { background-color: #8B5CF6; }
-.bg-orange { background-color: #F59E0B; }
-.bg-green { background-color: #10B981; }
+.bg-blue { background: linear-gradient(135deg, #3B82F6 0%, #2563EB 100%); }
+.bg-purple { background: linear-gradient(135deg, #8B5CF6 0%, #7C3AED 100%); }
+.bg-orange { background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%); }
+.bg-green { background: linear-gradient(135deg, #10B981 0%, #059669 100%); }
 
 .solution-card h4 {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   margin-bottom: 12px;
+  font-weight: 700;
+  color: #1E293B;
 }
 
 .solution-card p {
-  color: var(--color-text-light);
+  color: #64748B;
   font-size: 0.95rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
-
-.block-ai-tutor { margin-top: 0; }
-.block-analytics { margin-top: 40px; }
-.block-assessment { margin-top: -20px; }
-.block-personalization { margin-top: 20px; }
 
 @media (max-width: 992px) {
   .solutions-container {
     grid-template-columns: 1fr;
     gap: 50px;
   }
-  
-  .block-ai-tutor,
-  .block-analytics,
-  .block-assessment,
-  .block-personalization {
-    margin-top: 0;
+}
+
+@media (max-width: 576px) {
+  .solutions-grid {
+    grid-template-columns: 1fr;
   }
 }

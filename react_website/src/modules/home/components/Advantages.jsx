@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Stethoscope } from 'lucide-react';
+import { GraduationCap, Brain, Briefcase, Award } from 'lucide-react';
 import './Advantages.css';
 
 const Advantages = () => {
@@ -27,9 +27,9 @@ const Advantages = () => {
         
         <div className="advantages-grid">
           {[
-            { icon: <Stethoscope size={32} />, title: 'Expert Mentors', text: 'Learn from top experts in the industry with years of experience.' },
-            { icon: <Stethoscope size={32} />, title: 'AI Learning System', text: 'Adapt to learning styles, the process is faster and better.' },
-            { icon: <Stethoscope size={32} />, title: 'Real Projects', text: 'Apply what you\'ve learned in the real world to get an edge in job placement.' }
+            { icon: <GraduationCap size={32} />, title: 'Expert Mentors', text: 'Learn from top experts in the industry with years of experience.' },
+            { icon: <Brain size={32} />, title: 'AI Learning System', text: 'Adapt to learning styles, the process is faster and better.' },
+            { icon: <Briefcase size={32} />, title: 'Real Projects', text: 'Apply what you\'ve learned in the real world to get an edge in job placement.' }
           ].map((item, i) => (
             <motion.div 
               key={i}
@@ -56,7 +56,7 @@ const Advantages = () => {
           className="cert-card"
         >
           <div className="icon-wrapper">
-            <span className="icon"><Stethoscope size={32} /></span>
+            <span className="icon"><Award size={32} /></span>
           </div>
           <div className="cert-info">
             <h3>Certification</h3>

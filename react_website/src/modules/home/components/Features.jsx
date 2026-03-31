@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Stethoscope } from 'lucide-react';
+import { Zap, Target, TrendingUp } from 'lucide-react';
 import './Features.css';
 
 const Features = () => {
@@ -27,9 +27,9 @@ const Features = () => {
         
         <div className="features-grid">
           {[
-            { title: 'AI-Driven', text: 'Learning paths adapted directly to your learning styles and goals.' },
-            { title: 'Skill-Focused', text: 'Curriculum that focuses heavily on practical and hands-on case studies.' },
-            { title: 'Career-Oriented', text: 'Career-oriented skills to turn you into a premium resource.' }
+            { icon: <Zap size={24} className="icon" />, title: 'AI-Driven', text: 'Learning paths adapted directly to your learning styles and goals.' },
+            { icon: <Target size={24} className="icon" />, title: 'Skill-Focused', text: 'Curriculum that focuses heavily on practical and hands-on case studies.' },
+            { icon: <TrendingUp size={24} className="icon" />, title: 'Career-Oriented', text: 'Career-oriented skills to turn you into a premium resource.' }
           ].map((feature, i) => (
             <motion.div 
               key={i}
@@ -40,7 +40,7 @@ const Features = () => {
               className="feature-card"
             >
               <div className="icon-wrapper">
-                <Stethoscope size={24} className="icon" />
+                {feature.icon}
               </div>
               <h3>{feature.title}</h3>
               <p>{feature.text}</p>
