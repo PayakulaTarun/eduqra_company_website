@@ -15,7 +15,7 @@ const Hero = () => {
         >
           <span className="badge-pill">Next-Gen Learning Platform</span>
           <h1 className="hero-title">
-            AI-Powered Learning<br />
+            AI-Powered Smart Learning<br />
             <span className="text-secondary-blue">For Future Skills</span>
           </h1>
           <p className="hero-desc">
@@ -40,69 +40,48 @@ const Hero = () => {
           </div>
         </motion.div>
         
-        <div className="hero-visual-elements">
-          {/* Top Floating Icons/Avatars */}
-          <motion.div 
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 4, repeat: Infinity }}
-            className="floating-head head-1"
-          >
-            <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=120&q=80" alt="student" />
-          </motion.div>
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.9, x: 50 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="hero-visual-section"
+        >
+          <div className="hero-main-img-wrapper">
+            <img 
+              src="/images/home_page_hero_section.jpeg" 
+              alt="AI-Powered Learning Visualization" 
+              className="hero-main-img" 
+            />
+            {/* Keeping some minimalist floating elements for premium feel */}
+            <motion.div 
+              animate={{ y: [-5, 5, -5] }}
+              transition={{ duration: 5, repeat: Infinity }}
+              className="floating-badge badge-top"
+            >
+              <div className="badge-icon green-icon">
+                <Headphones size={20} />
+              </div>
+              <div className="badge-info">
+                <strong>24/7 Support</strong>
+                <span>Always Available</span>
+              </div>
+            </motion.div>
 
-          <motion.div 
-            animate={{ y: [-5, 5, -5] }}
-            transition={{ duration: 5, repeat: Infinity }}
-            className="floating-badge hero-badge-support"
-          >
-            <div className="badge-icon green-icon">
-              <Headphones size={20} />
-            </div>
-            <div className="badge-info">
-              <strong>24/7 Support</strong>
-              <span>Always Available</span>
-            </div>
-          </motion.div>
-
-          <motion.div 
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 4.5, repeat: Infinity }}
-            className="floating-head head-2"
-          >
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=120&q=80" alt="student" />
-          </motion.div>
-
-          <motion.div 
-            animate={{ y: [0, -8, 0] }}
-            transition={{ duration: 3.5, repeat: Infinity }}
-            className="floating-head head-3"
-          >
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&q=80" alt="student" />
-          </motion.div>
-
-          {/* Bottom Floating Icons/Avatars */}
-          <motion.div 
-            animate={{ y: [0, 12, 0] }}
-            transition={{ duration: 6, repeat: Infinity }}
-            className="floating-head head-4"
-          >
-            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=120&q=80" alt="student" />
-          </motion.div>
-
-          <motion.div 
-            animate={{ y: [5, -5, 5] }}
-            transition={{ duration: 5, repeat: Infinity }}
-            className="floating-badge hero-badge-doctors"
-          >
-            <div className="badge-icon blue-icon">
-              <CheckCircle2 size={20} />
-            </div>
-            <div className="badge-info">
-              <strong>Certified Doctors</strong>
-              <span>Global Expertise</span>
-            </div>
-          </motion.div>
-        </div>
+            <motion.div 
+              animate={{ y: [5, -5, 5] }}
+              transition={{ duration: 5, repeat: Infinity, delay: 1 }}
+              className="floating-badge badge-bottom"
+            >
+              <div className="badge-icon blue-icon">
+                <CheckCircle2 size={20} />
+              </div>
+              <div className="badge-info">
+                <strong>Certified Doctors</strong>
+                <span>Global Expertise</span>
+              </div>
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
