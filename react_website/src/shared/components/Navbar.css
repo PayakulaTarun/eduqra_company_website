@@ -17,7 +17,21 @@
   height: 32px;
 }
 
-/* Navigation Utilities */
+/* Mobile Toggle Button - Hidden by default on large screens */
+.mobile-menu-toggle {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .mobile-menu-toggle {
+    display: flex;
+    color: var(--color-secondary);
+    z-index: 1001;
+    padding: var(--space-2);
+  }
+}
+
+/* Desktop Only Elements */
 .desktop-only {
   display: none;
 }
@@ -25,9 +39,6 @@
 @media (min-width: 1024px) {
   .desktop-only {
     display: flex;
-  }
-  .mobile-menu-toggle {
-    display: none;
   }
 }
 
@@ -57,14 +68,6 @@
   font-weight: 600;
   color: var(--color-secondary);
   font-size: var(--fs-sm);
-}
-
-/* Mobile Toggle Button */
-.mobile-menu-toggle {
-  display: flex;
-  color: var(--color-secondary);
-  z-index: 1001;
-  padding: var(--space-2);
 }
 
 /* Mobile Drawer */
