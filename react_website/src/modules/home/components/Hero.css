@@ -7,8 +7,8 @@
 
 .hero-container {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-12);
+  grid-template-columns: 1.2fr 0.8fr; /* Side by side mobile */
+  gap: var(--space-4);
   align-items: center;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .hero-content {
-  text-align: center;
+  text-align: left;
   width: 100%;
 }
 
@@ -49,15 +49,15 @@
 }
 
 .hero-title {
-  font-family: var(--font-family); /* Force clean sans-serif */
-  font-size: clamp(2rem, 8vw, 2.5rem);
-  line-height: 1.1;
-  margin-bottom: var(--space-4);
+  font-family: var(--font-family);
+  font-size: 1.35rem; /* Decreased for side-by-side mobile */
+  line-height: 1.2;
+  margin-bottom: var(--space-2);
   color: var(--color-secondary);
 }
 
 @media (min-width: 1024px) {
-  .hero-title { font-size: var(--fs-hero); }
+  .hero-title { font-size: var(--fs-hero); text-align: left; }
 }
 
 .text-gradient {
@@ -68,12 +68,13 @@
 }
 
 .hero-desc {
-  font-family: var(--font-family); /* Force clean sans-serif */
-  font-size: 1rem;
+  font-family: var(--font-family);
+  font-size: 0.8rem; /* Decreased for side-by-side mobile */
   color: var(--color-text-muted);
-  max-width: 600px;
-  margin: 0 auto var(--space-8);
-  padding: 0 16px;
+  max-width: 100%;
+  margin-bottom: var(--space-4);
+  line-height: 1.4;
+  padding: 0;
 }
 
 @media (min-width: 1024px) {
@@ -81,34 +82,30 @@
     margin-left: 0;
     padding: 0;
     font-size: var(--fs-lg);
+    max-width: 600px;
   }
 }
 
 .hero-buttons {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
-  margin-bottom: var(--space-8);
-  width: 100%;
-  max-width: 320px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0 16px;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+  width: fit-content;
+  margin-left: 0;
 }
 
 @media (min-width: 480px) {
   .hero-buttons { 
     flex-direction: row; 
-    justify-content: center;
-    max-width: 100%;
+    gap: var(--space-4);
   }
 }
 
 @media (min-width: 1024px) {
   .hero-buttons { 
     justify-content: flex-start;
-    margin-left: 0;
-    padding: 0;
+    margin-bottom: var(--space-8);
   }
 }
 
