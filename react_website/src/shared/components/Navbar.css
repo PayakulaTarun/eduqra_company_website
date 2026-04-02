@@ -1,11 +1,10 @@
 .navbar {
-  background-color: var(--color-bg);
-  padding: 15px 0;
   position: sticky;
   top: 0;
+  width: 100%;
   z-index: 1000;
-  border-bottom: 1px solid #E2E8F0;
-  transition: all 0.3s ease;
+  padding: var(--space-4) 0;
+  transition: var(--transition-normal);
 }
 
 .navbar-container {
@@ -15,35 +14,111 @@
 }
 
 .logo img {
-  height: 40px;
+  height: 32px;
+}
+
+/* Navigation Utilities */
+.desktop-only {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .desktop-only {
+    display: flex;
+  }
+  .mobile-menu-toggle {
+    display: none;
+  }
 }
 
 .nav-links {
-  display: flex;
-  gap: 30px;
+  gap: var(--space-8);
+  align-items: center;
 }
 
 .nav-links a {
   font-weight: 500;
-  color: var(--color-text);
-  transition: color 0.3s;
+  color: var(--color-text-main);
+  font-size: var(--fs-sm);
+  transition: var(--transition-fast);
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover, 
+.nav-links a.active {
   color: var(--color-primary);
 }
 
 .nav-actions {
-  display: flex;
+  gap: var(--space-4);
   align-items: center;
-  gap: 20px;
 }
 
 .login-btn {
   font-weight: 600;
   color: var(--color-secondary);
+  font-size: var(--fs-sm);
 }
 
-.login-btn:hover {
-  text-decoration: underline;
+/* Mobile Toggle Button */
+.mobile-menu-toggle {
+  display: flex;
+  color: var(--color-secondary);
+  z-index: 1001;
+  padding: var(--space-2);
+}
+
+/* Mobile Drawer */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100svh; /* Dynamic viewport height for mobile browsers */
+  background: white;
+  z-index: 1000;
+  padding-top: 80px; /* Space for logo/toggle */
+}
+
+.drawer-content {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-8);
+  height: 100%;
+}
+
+.mobile-nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.mobile-nav-links a {
+  font-size: var(--fs-xl);
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+.mobile-nav-links a.active {
+  color: var(--color-primary);
+}
+
+.drawer-actions {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding-bottom: var(--space-8);
+}
+
+@media (min-width: 480px) {
+  .mobile-drawer {
+    width: 320px;
+    box-shadow: -10px 0 30px rgba(0,0,0,0.05);
+  }
+}
+
+@media (min-width: 768px) {
+  .logo img {
+    height: 40px;
+  }
 }

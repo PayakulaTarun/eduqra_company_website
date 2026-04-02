@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Headphones, CheckCircle2 } from 'lucide-react';
+import { Users, CheckCircle2, ArrowRight } from 'lucide-react';
 import './Hero.css';
 
 const Hero = () => {
@@ -9,7 +9,7 @@ const Hero = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: 0.1,
         delayChildren: 0.2
       }
     }
@@ -31,20 +31,26 @@ const Hero = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="hero-content text-left"
+          className="hero-content"
         >
-          <motion.span variants={itemVariants} className="badge-pill">Next-Gen Learning Platform</motion.span>
+          <motion.div variants={itemVariants} className="badge-pill">
+            <span className="dot" /> Next-Gen Learning Platform
+          </motion.div>
+          
           <motion.h1 variants={itemVariants} className="hero-title">
             AI-Powered Smart Learning<br />
-            <span className="text-secondary-blue">For Future Skills</span>
+            <span className="text-gradient">For Future Skills</span>
           </motion.h1>
+          
           <motion.p variants={itemVariants} className="hero-desc">
             Master AI, Data Science, and career-focused skills with personalized learning experiences designed for the modern era.
           </motion.p>
           
           <motion.div variants={itemVariants} className="hero-buttons">
-            <a href="/courses" className="btn btn-primary btn-pill">Explore Courses &rarr;</a>
-            <a href="/join" className="btn btn-outline-pill">Join Now</a>
+            <a href="/courses" className="btn btn-primary">
+              Explore Courses <ArrowRight size={20} />
+            </a>
+            <a href="/join" className="btn btn-outline">Join Now</a>
           </motion.div>
 
           <motion.div variants={itemVariants} className="hero-proof-row">
@@ -54,15 +60,15 @@ const Hero = () => {
               <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80" alt="user" />
             </div>
             <div className="proof-text">
-              <strong>50+</strong>
-              <span>To customer reviews</span>
+              <strong>12k+</strong>
+              <span>Global active learners</span>
             </div>
           </motion.div>
         </motion.div>
         
         <motion.div 
-          initial={{ opacity: 0, scale: 0.9, x: 50 }}
-          animate={{ opacity: 1, scale: 1, x: 0 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
           className="hero-visual-section"
         >
@@ -72,13 +78,15 @@ const Hero = () => {
               alt="AI-Powered Learning Visualization" 
               className="hero-main-img" 
             />
+            
+            {/* Floating Badges - Hidden on small mobile */}
             <motion.div 
               animate={{ y: [-5, 5, -5] }}
-              transition={{ duration: 5, repeat: Infinity }}
-              className="floating-badge badge-top"
+              transition={{ duration: 4, repeat: Infinity }}
+              className="floating-badge badge-top desktop-only-flex"
             >
               <div className="badge-icon green-icon">
-                <Headphones size={20} />
+                <Users size={20} />
               </div>
               <div className="badge-info">
                 <strong>24/7 Support</strong>
@@ -88,14 +96,14 @@ const Hero = () => {
 
             <motion.div 
               animate={{ y: [5, -5, 5] }}
-              transition={{ duration: 5, repeat: Infinity, delay: 1 }}
-              className="floating-badge badge-bottom"
+              transition={{ duration: 4, repeat: Infinity, delay: 1 }}
+              className="floating-badge badge-bottom desktop-only-flex"
             >
               <div className="badge-icon blue-icon">
                 <CheckCircle2 size={20} />
               </div>
               <div className="badge-info">
-                <strong>Certified Doctors</strong>
+                <strong>Expert Mentors</strong>
                 <span>Global Expertise</span>
               </div>
             </motion.div>
