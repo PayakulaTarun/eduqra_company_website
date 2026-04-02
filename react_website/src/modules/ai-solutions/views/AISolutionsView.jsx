@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Activity, Network, Zap, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { Stethoscope, CheckCircle2, ShieldCheck } from 'lucide-react';
 import './AISolutionsView.css';
 
 const AISolutionsView = () => {
@@ -18,24 +18,22 @@ const AISolutionsView = () => {
             animate={{ opacity: 1, x: 0 }}
             className="hero-text"
           >
-            <span className="section-subtitle">Revolutionizing Education</span>
-            <h1 className="hero-title">AI Solutions For Modern Learners</h1>
-            <p className="hero-desc">
+            <span className="solutions-hero-subtitle">Revolutionizing Education</span>
+            <h1 className="solutions-hero-title">AI Solutions For Modern Learners</h1>
+            <p className="solutions-hero-desc">
               Unlock the full potential of education with our suite of AI-powered tools designed to personalize, analyze, and optimize your learning journey.
             </p>
-            <div className="hero-buttons">
-              <a href="#get-started" className="btn btn-primary btn-pill-ai">Get Started</a>
-              <a href="#demo" className="btn btn-outline btn-pill-ai bg-white shadow-soft">Watch Demo</a>
+            <div className="solutions-hero-buttons">
+              <button className="btn-ai-primary">Get Started</button>
+              <button className="btn-ai-secondary">Watch Demo</button>
             </div>
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            className="hero-image"
+            className="hero-image-wrapper"
           >
-            <div className="hero-image-overlay">
-              <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="AI Solutions" />
-            </div>
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80" alt="AI Solutions" />
           </motion.div>
         </div>
       </section>
@@ -57,24 +55,22 @@ const AISolutionsView = () => {
           <div className="features-solutions-grid">
             {[
               { 
-                icon: <Activity size={24} />, colorClass: 'bg-blue', 
-                title: 'AI Tutor', 
-                desc: 'Advanced AI algorithms to optimize your ai tutor experience. Personalized learning paths built for individual needs.'
+                icon: <Stethoscope size={28} />, colorClass: 'icon-blue', 
+                title: 'AI Personal Tutor', 
+                desc: 'A 24/7 companion that answers questions, explains complex topics, and provides personalized feedback on your assignments.',
+                features: ['Real-Time Q&A', 'Concept Simplification', 'Personalized Feedback']
               },
               { 
-                icon: <Activity size={24} />, colorClass: 'bg-purple', 
-                title: 'Analytics', 
-                desc: 'Advanced AI algorithms to optimize your analytics experience. Real-time data processing for actionable insights.'
+                icon: <Stethoscope size={28} />, colorClass: 'icon-green', 
+                title: 'Learning Analytics', 
+                desc: 'Deep insights into your learning patterns. Identify strengths, weaknesses, and get data-driven suggestions for improvement.',
+                features: ['Progress Tracking', 'Skill Gap Analysis', 'Predictive Performance']
               },
               { 
-                icon: <Activity size={24} />, colorClass: 'bg-orange', 
-                title: 'Assessment', 
-                desc: 'Advanced AI algorithms to optimize your assessment experience. Smart testing that adapts to learner capability.'
-              },
-              { 
-                icon: <Activity size={24} />, colorClass: 'bg-green', 
-                title: 'Personalization', 
-                desc: 'Advanced AI algorithms to optimize your personalization experience. Dynamic content adjustments for better retention.'
+                icon: <Stethoscope size={28} />, colorClass: 'icon-orange', 
+                title: 'Adaptive Learning', 
+                desc: 'Our system adjusts the difficulty and content of your courses in real-time based on your performance and pace.',
+                features: ['Dynamic Curriculum', 'Pace Adjustment', 'Customized Exercises']
               }
             ].map((tool, i) => (
               <motion.div 
@@ -83,13 +79,22 @@ const AISolutionsView = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="premium-feature-card"
+                className="premium-feature-card-alt"
               >
-                <div className={`icon-square ${tool.colorClass}`}>
+                <div className={`icon-container-alt ${tool.colorClass}`}>
                   {tool.icon}
                 </div>
                 <h3>{tool.title}</h3>
                 <p>{tool.desc}</p>
+                <div className="card-divider"></div>
+                <ul className="card-features-list">
+                  {tool.features.map((feature, j) => (
+                    <li key={j}>
+                      <CheckCircle2 size={18} className="check-icon-green" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
               </motion.div>
             ))}
           </div>

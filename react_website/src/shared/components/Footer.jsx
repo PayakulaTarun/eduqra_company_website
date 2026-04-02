@@ -1,12 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { InstagramIcon, FacebookIcon, WhatsAppIcon, TelegramIcon } from './SocialIcons';
 import { Phone, Mail, MapPin } from 'lucide-react';
 import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <motion.footer 
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className="footer"
+    >
       <div className="container footer-container">
         <div className="footer-brand">
           <img src="/images/eduqra_logo_1774263954243.png" alt="Eduqra" className="footer-logo" style={{ filter: 'brightness(0) invert(1)' }} />
@@ -47,7 +54,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </footer>
+    </motion.footer>
   );
 };
 

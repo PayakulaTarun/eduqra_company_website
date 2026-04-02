@@ -30,6 +30,20 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    })
+  };
+
   return (
     <section className="testimonials section" id="testimonials">
       <div className="container">
@@ -56,10 +70,11 @@ const Testimonials = () => {
             <motion.div 
               className="testimonial-card" 
               key={testimonial.id}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.2 }}
+              custom={i}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
             >
               <div className="rating">
                 {[...Array(testimonial.rating)].map((_, i) => (

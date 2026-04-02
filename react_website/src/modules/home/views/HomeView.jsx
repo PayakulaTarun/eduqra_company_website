@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Hero from '../components/Hero';
-import Partners from '../components/Partners';
+
 import Features from '../components/Features';
 import Solutions from '../components/Solutions';
 import Courses from '../components/Courses';
@@ -21,6 +21,7 @@ const HomeView = () => {
       transition={{ duration: 0.4, ease: "easeInOut" }}
     >
       <Hero />
+
       <Features />
       <Solutions />
       <Courses />

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -10,7 +11,12 @@ const Navbar = () => {
   const isBlogDetail = /^\/blog\/.+/.test(location.pathname);
 
   return (
-    <nav className="navbar">
+    <motion.nav 
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="navbar"
+    >
       <div className="container navbar-container">
         <Link to="/" className="logo">
           <img src="/images/eduqra_logo_1774263954243.png" alt="Eduqra" />
@@ -45,7 +51,7 @@ const Navbar = () => {
           </>
         )}
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 

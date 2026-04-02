@@ -11,6 +11,26 @@ const Solutions = () => {
     { title: 'Masterclasses', text: 'Access to masterclasses for free and premium resources.', color: 'bg-green', icon: <PlayCircle size={24} />, delay: 0.4 }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.3
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { 
+      opacity: 1, 
+      x: 0,
+      transition: { duration: 0.5 }
+    }
+  };
+
   return (
     <section className="solutions section" id="ai-solutions">
       <div className="container solutions-container">
@@ -26,7 +46,13 @@ const Solutions = () => {
           <p className="solutions-desc" style={{ textAlign: 'left' }}>
             We provide a suite of AI tools designed to make learning more efficient, engaging, and personalized than ever before.
           </p>
-          <ul className="check-list">
+          <motion.ul 
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="check-list"
+          >
             {[
               'AI Personalized Learning Paths',
               'Real-Time Skill Assessment Reports',
@@ -35,24 +61,28 @@ const Solutions = () => {
             ].map((item, i) => (
               <motion.li 
                 key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 + (i * 0.1) }}
+                variants={itemVariants}
               >
                 <div className="check-icon-wrapper"><span className="check-icon">&#10004;</span></div> <span>{item}</span>
               </motion.li>
             ))}
-          </ul>
-          <a href="/courses" className="btn btn-primary" style={{ marginTop: '20px' }}>Start Learning Now &rarr;</a>
+          </motion.ul>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.8 }}
+          >
+            <a href="/courses" className="btn btn-primary" style={{ marginTop: '20px' }}>Start Learning Now &rarr;</a>
+          </motion.div>
         </motion.div>
         
         <div className="solutions-grid">
           {cards.map((card, i) => (
             <motion.div 
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 30, scale: 0.9 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: card.delay }}
               className="solution-card"

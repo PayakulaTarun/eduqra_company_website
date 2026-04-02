@@ -21,22 +21,42 @@ const teamMembers = [
 ];
 
 const AboutTeam = () => {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    })
+  };
+
   return (
     <section className="about-team section">
       <div className="container">
-        <div className="section-header">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="section-header"
+        >
           <span className="section-subtitle">Our Team</span>
           <h2 className="section-title">Meet The Minds Behind Eduqra</h2>
-        </div>
+        </motion.div>
         
         <div className="team-grid">
-          {teamMembers.map((member, index) => (
+          {teamMembers.map((member, i) => (
             <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
+              key={i}
+              custom={i}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
               className="team-card"
             >
               <div className="member-image">

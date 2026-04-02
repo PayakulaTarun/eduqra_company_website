@@ -4,11 +4,25 @@ import { Zap, Target, TrendingUp } from 'lucide-react';
 import './Features.css';
 
 const Features = () => {
+  const cardVariants = {
+    hidden: { opacity: 0, y: 30, scale: 0.95 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      scale: 1,
+      transition: {
+        delay: i * 0.1,
+        duration: 0.5,
+        ease: "easeOut"
+      }
+    })
+  };
+
   return (
     <section className="features section bg-light">
       <div className="container">
         <motion.span 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="section-subtitle"
@@ -16,7 +30,7 @@ const Features = () => {
           Why Choose Us?
         </motion.span>
         <motion.h2 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
@@ -33,10 +47,11 @@ const Features = () => {
           ].map((feature, i) => (
             <motion.div 
               key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
+              custom={i}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
               className="feature-card"
             >
               <div className="icon-wrapper">
