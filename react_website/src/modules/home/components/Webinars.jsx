@@ -4,13 +4,13 @@ import './Webinars.css';
 
 const webinars = [
   {
-    date: 'March',
+    date: 'MARCH',
     day: '25',
     title: 'The Future Of Generative AI',
     host: 'Hosted by Industry Experts'
   },
   {
-    date: 'March',
+    date: 'MARCH',
     day: '25',
     title: 'Mastering Data Visualization',
     host: 'Hosted by Industry Experts'
@@ -22,21 +22,25 @@ const Webinars = () => {
     <section className="webinars section" id="webinars">
       <div className="container webinars-container">
         <motion.div 
-          initial={{ opacity: 0, scale: 0.9, x: -50 }}
-          whileInView={{ opacity: 1, scale: 1, x: 0 }}
+          initial={{ opacity: 0, x: -30 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          className="webinars-image"
+          transition={{ duration: 0.8 }}
+          className="webinars-image-wrapper"
         >
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Expert-Led Live Webinars" />
+          <img 
+            src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80" 
+            alt="Library Study Group" 
+            className="webinar-main-img"
+          />
         </motion.div>
         
         <div className="webinars-content">
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6 }}
           >
             <span className="webinars-subtitle">Live Learning</span>
             <h2 className="webinars-title">Join Expert-Led Live Webinars</h2>
@@ -52,7 +56,7 @@ const Webinars = () => {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: 0.4 + (i * 0.15), duration: 0.5 }}
+                transition={{ delay: 0.2 + (i * 0.1), duration: 0.5 }}
                 className="webinar-card"
               >
                 <div className="webinar-date-box">
@@ -60,8 +64,8 @@ const Webinars = () => {
                   <span className="date-day">{item.day}</span>
                 </div>
                 <div className="webinar-info">
-                  <h4>{item.title}</h4>
-                  <p>{item.host}</p>
+                  <h4 className="webinar-item-title">{item.title}</h4>
+                  <p className="webinar-item-host">{item.host}</p>
                 </div>
               </motion.div>
             ))}
