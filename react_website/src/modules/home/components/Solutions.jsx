@@ -1,35 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Bot, Users, BarChart, PlayCircle } from 'lucide-react';
+import { Stethoscope, ArrowRight, CheckCircle2 } from 'lucide-react';
 import './Solutions.css';
 
 const Solutions = () => {
   const cards = [
-    { title: 'AI Tutor', text: 'An AI tutor will guide you every step you take towards your learning.', color: 'bg-blue', icon: <Bot size={24} />, delay: 0.1 },
-    { title: 'Mentorship', text: 'Access to 1-on-1 expert mentorship to guide you efficiently.', color: 'bg-purple', icon: <Users size={24} />, delay: 0.2 },
-    { title: 'Assessment', text: 'Advanced algorithms to track your performance and speed.', color: 'bg-orange', icon: <BarChart size={24} />, delay: 0.3 },
-    { title: 'Masterclasses', text: 'Access to masterclasses for free and premium resources.', color: 'bg-green', icon: <PlayCircle size={24} />, delay: 0.4 }
+    { title: 'AI Tutor', text: 'Advanced AI algorithms to optimize your ai tutor experience.', color: 'bg-blue', icon: <Stethoscope size={24} /> },
+    { title: 'Analytics', text: 'Advanced AI algorithms to optimize your analytics experience.', color: 'bg-purple', icon: <Stethoscope size={24} /> },
+    { title: 'Assessment', text: 'Advanced AI algorithms to optimize your assessment experience.', color: 'bg-orange', icon: <Stethoscope size={24} /> },
+    { title: 'Personalization', text: 'Advanced AI algorithms to optimize your personalization experience.', color: 'bg-green', icon: <Stethoscope size={24} /> }
   ];
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { 
-      opacity: 1, 
-      x: 0,
-      transition: { duration: 0.5 }
-    }
-  };
 
   return (
     <section className="solutions section" id="ai-solutions">
@@ -41,39 +21,41 @@ const Solutions = () => {
           transition={{ duration: 0.6 }}
           className="solutions-content"
         >
-          <span className="section-subtitle" style={{ textAlign: 'left' }}>Core Features</span>
-          <h2 className="section-title" style={{ textAlign: 'left' }}>Empowering Education With Artificial Intelligence</h2>
-          <p className="solutions-desc" style={{ textAlign: 'left' }}>
+          <span className="solutions-subtitle">Our Solutions</span>
+          <h2 className="solutions-title">Empowering Education With Artificial Intelligence</h2>
+          <p className="solutions-desc">
             We provide a suite of AI tools designed to make learning more efficient, engaging, and personalized than ever before.
           </p>
-          <motion.ul 
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="check-list"
-          >
+          
+          <ul className="check-list">
             {[
               'AI Personalized Learning Paths',
-              'Real-Time Skill Assessment Reports',
+              'Real-Time Skill Assessment System',
               '24/7 AI Tutor Support',
-              'Interactive & Practical Simulations'
+              'Interactive AI-Powered Simulations'
             ].map((item, i) => (
               <motion.li 
                 key={i}
-                variants={itemVariants}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
               >
-                <div className="check-icon-wrapper"><span className="check-icon">&#10004;</span></div> <span>{item}</span>
+                <CheckCircle2 size={24} className="check-icon-svg" />
+                <span>{item}</span>
               </motion.li>
             ))}
-          </motion.ul>
+          </ul>
+          
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.8 }}
+            transition={{ delay: 0.5 }}
           >
-            <a href="/courses" className="btn btn-primary" style={{ marginTop: '20px' }}>Start Learning Now &rarr;</a>
+            <a href="/about" className="btn btn-primary">
+              Learn More About Us <ArrowRight size={20} />
+            </a>
           </motion.div>
         </motion.div>
         
@@ -81,17 +63,17 @@ const Solutions = () => {
           {cards.map((card, i) => (
             <motion.div 
               key={i}
-              initial={{ opacity: 0, y: 30, scale: 0.9 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: card.delay }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
               className="solution-card"
             >
               <div className={`icon-wrapper ${card.color}`}>
                 {card.icon}
               </div>
-              <h4>{card.title}</h4>
-              <p>{card.text}</p>
+              <h4 className="card-title">{card.title}</h4>
+              <p className="card-text">{card.text}</p>
             </motion.div>
           ))}
         </div>
