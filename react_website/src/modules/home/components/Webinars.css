@@ -1,13 +1,14 @@
 .webinars {
   padding: 100px 0;
   background-color: white;
+  text-align: left;
 }
 
 .webinars-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 60px;
-  align-items: center;
+  align-items: flex-start; /* Aligned vertically to the top for better left-start feel */
 }
 
 .webinars-image-wrapper {
@@ -25,33 +26,37 @@
   text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Forced start from left */
+  align-items: flex-start; /* Strict start from left */
 }
 
 .webinars-subtitle {
   color: #3b82f6;
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
   margin-bottom: 12px;
   display: block;
+  text-align: left;
+  margin-left: 0;
 }
 
 .webinars-title {
-  font-size: 2.2rem;
+  font-size: 1.8rem; /* Decreased size for parity */
   font-weight: 700;
   color: #111827;
   line-height: 1.25;
-  margin-bottom: 24px;
-  margin-left: 0; /* Reset margins */
+  margin-bottom: 20px;
+  text-align: left;
+  margin-left: 0;
 }
 
 .webinars-desc {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #6b7280;
   line-height: 1.6;
   margin-bottom: 32px;
   max-width: 100%;
-  margin-left: 0; /* Reset margins */
+  text-align: left;
+  margin-left: 0;
 }
 
 .webinars-list {
@@ -59,14 +64,14 @@
   flex-direction: column;
   gap: 16px;
   width: 100%;
-  align-items: flex-start; /* Forced start from left */
+  align-items: flex-start; /* Strict start from left */
 }
 
 .webinar-card {
   display: flex;
   align-items: center;
   gap: 24px;
-  padding: 24px;
+  padding: 20px 24px;
   border-radius: 20px;
   border: 1px solid #f3f4f6;
   background-color: white;
@@ -74,6 +79,11 @@
   transition: transform 0.3s ease;
   width: 100%;
   text-align: left;
+}
+
+.webinar-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
 }
 
 .webinar-date-box {
@@ -108,18 +118,18 @@
   text-align: left;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Forced start from left in cards */
+  align-items: flex-start; /* Strict start from left */
 }
 
 .webinar-item-title {
-  font-size: 1.15rem;
+  font-size: 1.125rem;
   font-weight: 700;
   color: #111827;
   margin-bottom: 4px;
 }
 
 .webinar-item-host {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #9ca3af;
   font-weight: 500;
 }
@@ -129,10 +139,16 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
+  .webinars-title {
+    font-size: 1.6rem;
+  }
 }
 
 @media (max-width: 640px) {
   .webinars-title {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
+  }
+  .webinar-card {
+    padding: 16px;
   }
 }
