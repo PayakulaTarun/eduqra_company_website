@@ -63,7 +63,7 @@ const WebinarsView = () => {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="hero-content centered-hero"
+            className="hero-content"
           >
             <h1 className="webinars-title">Expert-Led Live Webinars</h1>
             <p className="webinars-subtitle">
