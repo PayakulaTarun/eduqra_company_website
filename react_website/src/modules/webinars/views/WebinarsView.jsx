@@ -59,7 +59,7 @@ const WebinarsView = () => {
     >
       {/* Hero Section */}
       <section className="webinars-hero">
-        <div className="container">
+        <div className="container text-center">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
