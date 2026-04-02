@@ -3,8 +3,11 @@
   top: 0;
   width: 100%;
   z-index: 1000;
-  padding: var(--space-4) 0;
+  padding: var(--space-2) 0; /* Reduced vertical padding */
   transition: var(--transition-normal);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(229, 231, 235, 0.5);
 }
 
 .navbar-container {
@@ -13,8 +16,21 @@
   align-items: center;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+}
+
 .logo img {
-  height: 32px;
+  height: 40px; /* Increased mobile height (was 32px) */
+  width: auto;
+  transition: var(--transition-normal);
+}
+
+@media (min-width: 1024px) {
+  .logo img {
+    height: 52px; /* Increased desktop height (was 40px) */
+  }
 }
 
 /* Mobile Toggle Button - Hidden by default on large screens */
@@ -120,8 +136,4 @@
   }
 }
 
-@media (min-width: 768px) {
-  .logo img {
-    height: 40px;
-  }
-}
+
