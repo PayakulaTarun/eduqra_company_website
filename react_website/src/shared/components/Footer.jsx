@@ -16,7 +16,7 @@ const Footer = () => {
     >
       <div className="container footer-container">
         <div className="footer-brand">
-          <img src="/images/eduqra_logo_1774263954243.png" alt="Eduqra" className="footer-logo" style={{ filter: 'brightness(0) invert(1)' }} />
+          <img src="/images/eduqra_logo.jpeg" alt="Eduqra" className="footer-logo" style={{ filter: 'brightness(0) invert(1)' }} />
           <p>AI-Powered Learning For Future Skills. Master AI, Data Science, and career-focused skills with personalized learning experiences.</p>
           <div className="social-links">
             <a href="#"><span><InstagramIcon size={20} /></span></a>
