@@ -2,11 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronRight } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
+import { logoutUser } from '../lib/firebase';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { currentUser } = useAuth();
   
   const isActive = (path) => location.pathname === path ? "active" : "";
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -45,11 +48,22 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
+          {currentUser && (
+            <li>
+              <Link to="/profile" className={isActive("/profile")}>Profile</Link>
+            </li>
+          )}
         </ul>
 
         <div className="nav-actions desktop-only">
-          <Link to="/login" className="login-btn">Login</Link>
-          <Link to="/join" className="btn btn-primary">Join Now <ChevronRight size={18} /></Link>
+          {currentUser ? (
+            <button onClick={logoutUser} className="login-btn">Logout</button>
+          ) : (
+            <>
+              <Link to="/login" className="login-btn">Login</Link>
+              <Link to="/join" className="btn btn-primary">Join Now <ChevronRight size={18} /></Link>
+            </>
+          )}
         </div>
 
         {/* Mobile Toggle */}
@@ -79,8 +93,14 @@ const Navbar = () => {
                 ))}
               </ul>
               <div className="drawer-actions">
-                <Link to="/login" className="login-btn">Login</Link>
-                <Link to="/join" className="btn btn-primary w-full">Join Now &rarr;</Link>
+                {currentUser ? (
+                  <button onClick={logoutUser} className="login-btn w-full">Logout</button>
+                ) : (
+                  <>
+                    <Link to="/login" className="login-btn">Login</Link>
+                    <Link to="/join" className="btn btn-primary w-full">Join Now &rarr;</Link>
+                  </>
+                )}
               </div>
             </div>
           </motion.div>

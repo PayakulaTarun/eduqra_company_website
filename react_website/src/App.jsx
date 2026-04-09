@@ -6,6 +6,7 @@ import AboutView from './modules/about/views/AboutView';
 // Courses and Webinars are temporarily hidden
 import AISolutionsView from './modules/ai-solutions/views/AISolutionsView';
 import ProductsView from './modules/products/views/ProductsView';
+import ProfileView from './modules/profile/views/ProfileView';
 import BlogView from './modules/blog/views/BlogView';
 import BlogDetailsView from './modules/blog/views/BlogDetailsView';
 import ContactView from './modules/contact/views/ContactView';
@@ -32,6 +33,7 @@ function App() {
           {/* Courses and Webinars temporarily hidden */}
           <Route path="/ai-solutions" element={<AISolutionsView />} />
           <Route path="/products" element={<ProductsView />} />
+          <Route path="/profile" element={<ProfileView />} />
           {/* Blog temporarily hidden */}
           {/* <Route path="/blog" element={<BlogView />} />
           <Route path="/blog/:id" element={<BlogDetailsView />} /> */}
