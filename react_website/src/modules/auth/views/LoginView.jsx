@@ -1,10 +1,22 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Mail, Lock, LogIn, ArrowLeft } from 'lucide-react';
+import { signInWithGoogle } from '../../../shared/lib/firebase';
 import './Auth.css';
 
 const LoginView = () => {
+  const navigate = useNavigate();
+
+  const handleGoogleLogin = async () => {
+    try {
+      await signInWithGoogle();
+      navigate('/');
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0, x: -20 }}
@@ -46,7 +58,7 @@ const LoginView = () => {
           </form>
           <div className="auth-sep"><span>Or login with</span></div>
           <div className="social-login">
-            <button className="social-btn google">G</button>
+            <button className="social-btn google" onClick={handleGoogleLogin}>G</button>
             <button className="social-btn facebook">f</button>
           </div>
           <p className="auth-bottom">
