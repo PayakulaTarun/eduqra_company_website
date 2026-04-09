@@ -66,8 +66,7 @@ const SignUpView = () => {
           </form>
           <div className="auth-sep"><span>Or sign up with</span></div>
           <div className="social-login">
-            <button className="social-btn google" onClick={handleGoogleSignup}>G</button>
-            <button className="social-btn facebook">f</button>
+            <button className="social-btn google" onClick={handleGoogleSignup}>Continue with Google</button>
           </div>
           <p className="auth-bottom">
             Already have an account? <Link to="/login">Login</Link>

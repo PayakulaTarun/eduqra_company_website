@@ -172,14 +172,18 @@
 
 .social-btn {
   flex: 1;
-  padding: 15px;
+  padding: 16px;
   border-radius: 12px;
   border: 1px solid #E2E8F0;
   background: white;
   cursor: pointer;
-  font-weight: 800;
-  font-size: 1.25rem;
+  font-weight: 700;
+  font-size: 1rem;
   transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
 }
 
 .social-btn:hover {
@@ -187,8 +191,15 @@
   border-color: var(--color-primary);
 }
 
-.google { color: #DB4437; }
-.facebook { color: #4267B2; }
+.google { 
+  color: var(--primary-color);
+  border: 1.5px solid #e2e8f0;
+}
+
+.google:hover {
+  background: #f8fafc;
+  border-color: var(--color-primary);
+}
 
 .auth-bottom {
   text-align: center;
