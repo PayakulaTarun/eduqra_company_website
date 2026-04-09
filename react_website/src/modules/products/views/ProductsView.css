@@ -45,7 +45,7 @@
 
 .featured-image {
   position: relative;
-  min-height: 400px;
+  min-height: 320px; /* Reduced from 400px */
 }
 
 .featured-image img {
@@ -131,15 +131,16 @@
   background: #ffffff;
   border-radius: 24px;
   padding: 40px;
-  border: 1px solid #f1f5f9;
+  border: 1.5px solid #e2e8f0; /* Slightly thicker and darker border */
   transition: all 0.3s ease;
   position: relative;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); /* Added base shadow */
 }
 
 .product-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-  border-color: #e2e8f0;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08); /* Stronger hover shadow */
+  border-color: var(--color-primary); /* Use primary color on hover */
 }
 
 .product-card-inner {
@@ -250,22 +251,24 @@
 
 /* Bottom CTA */
 .products-cta-box {
-  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  background: linear-gradient(135deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
   padding: 80px 40px;
   border-radius: 32px;
   text-align: center;
   color: #ffffff;
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.2);
 }
 
 .products-cta-box h2 {
   font-size: 2.5rem;
   font-weight: 800;
   margin-bottom: 16px;
+  color: #ffffff; /* Explicitly white */
 }
 
 .products-cta-box p {
   font-size: 1.1rem;
-  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.9); /* Lighter opacity white */
   margin-bottom: 40px;
   max-width: 600px;
   margin-left: auto;
@@ -274,7 +277,7 @@
 
 .btn.white {
   background: #ffffff;
-  color: var(--primary-color);
+  color: var(--color-primary-dark); /* Darker blue for sharper contrast */
 }
 
 .btn.white:hover {

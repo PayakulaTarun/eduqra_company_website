@@ -38,7 +38,7 @@ const BlogView = () => {
               className="featured-post-card"
             >
               <div className="featured-image-box">
-                <div className="gray-placeholder"></div>
+                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80" alt="Future of AI" />
               </div>
               <div className="featured-content">
                 <div className="featured-meta">
@@ -113,16 +113,7 @@ const BlogView = () => {
               </ul>
             </div>
 
-            <div className="sidebar-widget categories-widget">
-              <h3>Categories</h3>
-              <ul className="categories-list">
-                <li><a href="#cat1">Artificial Intelligence</a></li>
-                <li><a href="#cat2">Career Growth</a></li>
-                <li><a href="#cat3">Web Development</a></li>
-                <li><a href="#cat4">Data Science</a></li>
-                <li><a href="#cat5">Technology</a></li>
-              </ul>
-            </div>
+
           </aside>
         </div>
       </section>

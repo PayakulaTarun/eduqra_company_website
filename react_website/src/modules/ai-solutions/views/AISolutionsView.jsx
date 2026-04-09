@@ -1,3 +1,5 @@
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
 import { Brain, BarChart, Zap, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -11,6 +13,14 @@ const AISolutionsView = () => {
       exit={{ opacity: 0 }}
       className="ai-solutions-page"
     >
+      <Helmet>
+        <title>AI Solutions | Eduqra Personalized Learning & Adaptive AI Tools</title>
+        <meta name="description" content="Explore Eduqra's suite of AI solutions: AI Personal Tutors, Learning Analytics, and Adaptive Systems designed to revolutionize modern education." />
+        <meta name="keywords" content="AI education solutions, adaptive learning platforms, AI tutoring technology, student analytics AI, future of edtech" />
+        <meta property="og:title" content="Eduqra AI Solutions | Intelligent Future of Learning" />
+        <meta property="og:description" content="Unlock the potential of AI-driven education with our personalized learning tools." />
+      </Helmet>
+
       <section className="solutions-hero">
         <div className="container hero-container">
           <motion.div 

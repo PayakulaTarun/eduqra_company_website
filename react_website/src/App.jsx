@@ -32,8 +32,9 @@ function App() {
           {/* Courses and Webinars temporarily hidden */}
           <Route path="/ai-solutions" element={<AISolutionsView />} />
           <Route path="/products" element={<ProductsView />} />
-          <Route path="/blog" element={<BlogView />} />
-          <Route path="/blog/:id" element={<BlogDetailsView />} />
+          {/* Blog temporarily hidden */}
+          {/* <Route path="/blog" element={<BlogView />} />
+          <Route path="/blog/:id" element={<BlogDetailsView />} /> */}
           <Route path="/contact" element={<ContactView />} />
           {/* Course player temporarily hidden */}
           <Route path="/login" element={<LoginView />} />

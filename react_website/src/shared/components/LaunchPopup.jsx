@@ -15,7 +15,10 @@ const LaunchPopup = () => {
       return;
     }
 
-    const timer = setTimeout(() => setIsVisible(true), 800);
+    // Reset visibility on path change to home
+    setIsVisible(false);
+
+    const timer = setTimeout(() => setIsVisible(true), 1200); // Increased delay
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
@@ -25,7 +28,7 @@ const LaunchPopup = () => {
 
   return (
     <AnimatePresence>
-      {isVisible && (
+      {isVisible && location.pathname === '/' && (
         <>
           {/* Backdrop */}
           <motion.div
@@ -33,7 +36,7 @@ const LaunchPopup = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.5 }} // Slower backdrop
             onClick={handleClose}
           />
 
@@ -41,10 +44,10 @@ const LaunchPopup = () => {
           <div className="popup-positioner">
           <motion.div
             className="launch-popup horizontal"
-            initial={{ opacity: 0, scale: 0.8, y: 40 }}
+            initial={{ opacity: 0, scale: 0.9, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.85, y: 30 }}
-            transition={{ type: 'spring', damping: 22, stiffness: 260 }}
+            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+            transition={{ duration: 0.8, ease: "easeOut" }} // Slower main entry
             role="dialog"
             aria-modal="true"
             aria-label="Eduqra Product Launch Announcement"

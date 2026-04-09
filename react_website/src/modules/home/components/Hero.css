@@ -1,5 +1,5 @@
 .hero {
-  padding: var(--space-8) 0;
+  padding: 0 0 var(--space-8) 0; /* Removed top padding */
   overflow: hidden;
   background-color: var(--color-bg-primary);
   position: relative;
@@ -13,7 +13,7 @@
 }
 
 @media (min-width: 1024px) {
-  .hero { padding: var(--space-20) 0; }
+  .hero { padding: var(--space-4) 0 var(--space-20) 0; } /* Small top padding on desktop */
   .hero-container { grid-template-columns: 1.15fr 0.85fr; gap: var(--space-16); }
 }
 

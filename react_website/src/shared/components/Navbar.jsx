@@ -21,7 +21,7 @@ const Navbar = () => {
     { name: 'About Us', path: '/about' },
     { name: 'AI Solutions', path: '/ai-solutions' },
     { name: 'Products', path: '/products' },
-    { name: 'Blog', path: '/blog' },
+    // { name: 'Blog', path: '/blog' }, // Hidden at present
     { name: 'Contact', path: '/contact' },
   ];
 

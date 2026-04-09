@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Helmet } from 'react-helmet-async';
 import { Brain, Users, BarChart3, Target, ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './ProductsView.css';
@@ -55,6 +56,14 @@ const ProductsView = () => {
       exit={{ opacity: 0 }}
       className="products-page"
     >
+      <Helmet>
+        <title>Products | Eduqra AI Tutor, Adaptive Engine & Learning Analytics</title>
+        <meta name="description" content="Discover Eduqra's AI product ecosystem: 1-on-1 AI Tutors, Adaptive Learning Engines, and Skill-Gap Analytics for precision education." />
+        <meta name="keywords" content="AI tutor website, adaptive learning engine, skill-gap analytics, personalized education tech, automated assessment" />
+        <meta property="og:title" content="Eduqra AI Products | The Future of Learning" />
+        <meta property="og:description" content="Explore our revolutionary AI-powered education products designed for 1-on-1 personalized growth." />
+      </Helmet>
+
       {/* Header section */}
       <section className="products-hero section">
         <div className="container">
@@ -90,7 +99,7 @@ const ProductsView = () => {
               </div>
               <div className="featured-info">
                  <div className="featured-badge">COMING SOON</div>
-                 <h2>Eduqra 1-on-1 AI Tutor Website</h2>
+                 <h2>Eduqra 1-on-1 Tutor Website</h2>
                  <p>
                    Our most ambitious product yet. A specialized ecosystem where students get undivided attention from AI-matched mentors and real-time AI assistance.
                  </p>
@@ -116,8 +125,8 @@ const ProductsView = () => {
                 className={`product-card ${product.color}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ delay: index * 0.1, duration: 0.5 }}
               >
                 <div className="product-card-inner">
                   <div className="product-icon-box">
