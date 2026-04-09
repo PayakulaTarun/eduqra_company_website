@@ -62,8 +62,8 @@ const AboutStory = () => {
               <span className="stat-label">Founded</span>
             </motion.div>
             <motion.div variants={itemVariants} className="story-stat">
-              <span className="stat-value">10k+</span>
-              <span className="stat-label">Active Learners</span>
+              <span className="stat-value">AI-Prep</span>
+              <span className="stat-label">Industry Ready</span>
             </motion.div>
           </div>
         </motion.div>

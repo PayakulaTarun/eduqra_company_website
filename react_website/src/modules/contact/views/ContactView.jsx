@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock, Send, Globe } from 'lucide-react';
-import { InstagramIcon, FacebookIcon, WhatsAppIcon, TelegramIcon } from '../../../shared/components/SocialIcons';
+import { InstagramIcon, LinkedinIcon } from '../../../shared/components/SocialIcons';
 import './ContactView.css';
 
 const ContactView = () => {
@@ -36,7 +36,7 @@ const ContactView = () => {
                   <div className="icon-box"><MapPin size={24} /></div>
                   <div className="text-box">
                     <h3>Our Location</h3>
-                    <p>Gallery milinium plaza, upperpally chintalmate road, Rangareddy Hyderabad 500048</p>
+                    <p>302, c162, allwyn colony, kukatpally Hyderabad, 500072</p>
                   </div>
                 </div>
 
@@ -44,7 +44,7 @@ const ContactView = () => {
                   <div className="icon-box"><Phone size={24} /></div>
                   <div className="text-box">
                     <h3>Phone Number</h3>
-                    <p>+91 9618344086</p>
+                    <p>+91 7337312325</p>
                   </div>
                 </div>
 
@@ -52,7 +52,7 @@ const ContactView = () => {
                   <div className="icon-box"><Mail size={24} /></div>
                   <div className="text-box">
                     <h3>Email Address</h3>
-                    <p>sureshpeddinti221@gmail.com</p>
+                    <p>support@eduqra.com</p>
                   </div>
                 </div>
 
@@ -68,10 +68,8 @@ const ContactView = () => {
               <div className="social-connect">
                 <h3>Follow Us</h3>
                 <div className="social-icons">
-                  <a href="#"><InstagramIcon size={24} /></a>
-                  <a href="#"><FacebookIcon size={24} /></a>
-                  <a href="#"><WhatsAppIcon size={24} /></a>
-                  <a href="#"><TelegramIcon size={24} /></a>
+                  <a href="https://www.instagram.com/eduqra/" target="_blank" rel="noopener noreferrer"><InstagramIcon size={24} /></a>
+                  <a href="https://www.linkedin.com/company/eduqra/?viewAsMember=true" target="_blank" rel="noopener noreferrer"><LinkedinIcon size={24} /></a>
                 </div>
               </div>
             </motion.div>
@@ -110,10 +108,17 @@ const ContactView = () => {
 
       <section className="map-section section">
         <div className="container">
-          <div className="map-placeholder">
-            <Globe className="globe-icon" size={100} />
-            <h2>Interactive Map Coming Soon</h2>
-            <p>We are located in the heart of Hyderabad, India.</p>
+          <div className="map-wrapper">
+            <iframe 
+              title="Eduqra Office Location"
+              src="https://maps.google.com/maps?q=302,%20C162,%20Allwyn%20Colony,%20Kukatpally,%20Hyderabad,%20Telangana%20500072&t=&z=15&ie=UTF8&iwloc=&output=embed"
+              width="100%" 
+              height="450" 
+              style={{ border: 0 }} 
+              allowFullScreen="" 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </section>

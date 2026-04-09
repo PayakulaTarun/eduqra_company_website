@@ -4,8 +4,7 @@ import Hero from '../components/Hero';
 
 import Features from '../components/Features';
 import Solutions from '../components/Solutions';
-import Courses from '../components/Courses';
-import Webinars from '../components/Webinars';
+// Courses and Webinars hidden temporarily
 import Advantages from '../components/Advantages';
 import AppPromo from '../components/AppPromo';
 import Testimonials from '../components/Testimonials';
@@ -24,10 +23,10 @@ const HomeView = () => {
 
       <Features />
       <Solutions />
-      <Courses />
-      <Webinars />
+      {/* Courses and Webinars hidden temporarily */}
       <Advantages />
       <Testimonials />
+      <FAQ />
       <CTA />
     </motion.main>
   );

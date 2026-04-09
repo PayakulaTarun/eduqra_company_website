@@ -1,6 +1,6 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Stethoscope, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { Brain, BarChart, Zap, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import './AISolutionsView.css';
 
 const AISolutionsView = () => {
@@ -24,8 +24,8 @@ const AISolutionsView = () => {
               Unlock the full potential of education with our suite of AI-powered tools designed to personalize, analyze, and optimize your learning journey.
             </p>
             <div className="solutions-hero-buttons">
-              <button className="btn-ai-primary">Get Started</button>
-              <button className="btn-ai-secondary">Watch Demo</button>
+              <Link to="/contact" className="btn-ai-primary">Get Started</Link>
+              <Link to="/contact" className="btn-ai-secondary">Watch Demo</Link>
             </div>
           </motion.div>
           <motion.div 
@@ -55,19 +55,19 @@ const AISolutionsView = () => {
           <div className="features-solutions-grid">
             {[
               { 
-                icon: <Stethoscope size={28} />, colorClass: 'icon-blue', 
+                icon: <Brain size={28} />, colorClass: 'icon-blue', 
                 title: 'AI Personal Tutor', 
                 desc: 'A 24/7 companion that answers questions, explains complex topics, and provides personalized feedback on your assignments.',
                 features: ['Real-Time Q&A', 'Concept Simplification', 'Personalized Feedback']
               },
               { 
-                icon: <Stethoscope size={28} />, colorClass: 'icon-green', 
+                icon: <BarChart size={28} />, colorClass: 'icon-green', 
                 title: 'Learning Analytics', 
                 desc: 'Deep insights into your learning patterns. Identify strengths, weaknesses, and get data-driven suggestions for improvement.',
                 features: ['Progress Tracking', 'Skill Gap Analysis', 'Predictive Performance']
               },
               { 
-                icon: <Stethoscope size={28} />, colorClass: 'icon-orange', 
+                icon: <Zap size={28} />, colorClass: 'icon-orange', 
                 title: 'Adaptive Learning', 
                 desc: 'Our system adjusts the difficulty and content of your courses in real-time based on your performance and pace.',
                 features: ['Dynamic Curriculum', 'Pace Adjustment', 'Customized Exercises']

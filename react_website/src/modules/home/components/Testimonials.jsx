@@ -7,7 +7,7 @@ const testimonials = [
     id: 1,
     rating: 5,
     text: `"Eduqra's AI-driven approach helped me master complex concepts in half the time. The personalized path was a game-changer."`,
-    author: 'Lisa Thomas',
+    author: 'Sarah Jenkins',
     role: 'Product Manager',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80'
   },
@@ -15,17 +15,17 @@ const testimonials = [
     id: 2,
     rating: 5,
     text: `"The real-world projects gave me the confidence to apply for senior roles. I landed my dream job within 3 months of taking your course."`,
-    author: 'Lisa Thomas',
+    author: 'David Chen',
     role: 'Data Scientist',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&q=80'
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80'
   },
   {
     id: 3,
     rating: 5,
     text: `"Your class's comprehensive, hands-on and real-time interaction that's rare, there is simply no better approach to mastering AI."`,
-    author: 'Lisa Thomas',
+    author: 'Michael Rodriguez',
     role: 'Frontend Developer',
-    image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80'
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80'
   }
 ];
 

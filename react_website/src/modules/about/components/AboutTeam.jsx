@@ -6,18 +6,13 @@ const teamMembers = [
   {
     name: 'Mr. Tarun Chandra',
     role: 'CEO & Founder',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+    image: '/images/tarun.jpeg'
   },
   {
-    name: 'Mr. Suresh Peddinti',
-    role: 'CTO',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
+    name: 'V. Bhanu Shankar',
+    role: 'Co-Founder',
+    image: '/images/bhanu_co-founder.jpeg'
   },
-  {
-    name: 'Mr. Tarun Chandra',
-    role: 'CEO & Founder',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80'
-  }
 ];
 
 const AboutTeam = () => {

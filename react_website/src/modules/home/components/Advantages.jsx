@@ -6,25 +6,25 @@ import './Advantages.css';
 const advantages = [
   {
     icon: <Users size={32} />,
-    title: 'Expert Mentors',
-    text: 'Learn from the best in the industry with years of experience.'
+    title: 'Industry Mentors',
+    text: 'Collaborate with AI researchers and data scientists from leading global tech companies.'
   },
   {
     icon: <Brain size={32} />,
-    title: 'AI Learning System',
-    text: 'Adaptive technology that understands your unique needs.'
+    title: 'Adaptive Learning',
+    text: 'A smart environment that personalizes content based on your cognitive load and retention.'
   },
   {
     icon: <Code size={32} />,
-    title: 'Real Projects',
-    text: 'Apply your knowledge to real-world scenarios and build a portfolio.'
+    title: 'Practical Labs',
+    text: 'Access hosted GPU environments and real-world datasets to build industry-grade AI projects.'
   }
 ];
 
 const certification = {
   icon: <Award size={32} />,
-  title: 'Certification',
-  text: 'Get recognized globally with our industry-standard certificates.'
+  title: 'Digital Credentials',
+  text: 'Earn verified blockchain-backed certificates recognized by top technology employers.'
 };
 
 const Advantages = () => {

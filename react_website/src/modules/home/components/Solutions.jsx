@@ -1,14 +1,13 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Stethoscope, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Brain, BarChart, ClipboardCheck, Target, ArrowRight, CheckCircle2 } from 'lucide-react';
 import './Solutions.css';
 
 const Solutions = () => {
   const cards = [
-    { title: 'AI Tutor', text: 'Advanced AI algorithms to optimize your ai tutor experience.', color: 'bg-blue', icon: <Stethoscope size={24} /> },
-    { title: 'Analytics', text: 'Advanced AI algorithms to optimize your analytics experience.', color: 'bg-purple', icon: <Stethoscope size={24} /> },
-    { title: 'Assessment', text: 'Advanced AI algorithms to optimize your assessment experience.', color: 'bg-orange', icon: <Stethoscope size={24} /> },
-    { title: 'Personalization', text: 'Advanced AI algorithms to optimize your personalization experience.', color: 'bg-green', icon: <Stethoscope size={24} /> }
+    { title: 'AI Tutor', text: 'Personalized AI mentors that adapt to your learning style and provide instant feedback.', color: 'bg-blue', icon: <Brain size={24} /> },
+    { title: 'Analytics', text: 'Deep learning insights to track progress and identify areas for skill improvement.', color: 'bg-purple', icon: <BarChart size={24} /> },
+    { title: 'Assessment', text: 'Smart evaluation systems that test practical knowledge through real-world scenarios.', color: 'bg-orange', icon: <ClipboardCheck size={24} /> },
+    { title: 'Personalization', text: 'Tailored learning paths that evolve based on your individual performance and goals.', color: 'bg-green', icon: <Target size={24} /> }
   ];
 
   return (
@@ -53,9 +52,9 @@ const Solutions = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.5 }}
           >
-            <a href="/about" className="btn btn-primary">
+            <Link to="/about" className="btn btn-primary">
               Learn More About Us <ArrowRight size={20} />
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
         

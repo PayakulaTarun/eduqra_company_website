@@ -5,20 +5,20 @@ import './FAQ.css';
 
 const faqs = [
   {
-    question: "How do I get started with Eduqra?",
-    answer: "Simply click on the 'Join Now' button, create your account, and you'll have immediate access to our courses and AI-powered learning dashboard."
+    question: "What makes Eduqra different from other learning platforms?",
+    answer: "Unlike traditional platforms, Eduqra uses proprietary AI to create a dynamic learning environment that adjusts to your pace, style, and goals in real-time."
   },
   {
-    question: "Are the courses self-paced or live?",
-    answer: "We offer both! Our main courses are self-paced with AI tutor support, while our webinars provide live, expert-led interaction on a scheduled basis."
+    question: "How does the AI Personal Tutor work?",
+    answer: "Our AI Tutor is trained on curated educational content to provide 24/7 support. It can explain complex concepts, solve problems, and guide you through assignments."
   },
   {
-    question: "Can I get a certificate after completion?",
-    answer: "Yes! Every course completion is accompanied by a globally recognized digital certificate that you can add to your LinkedIn profile or resume."
+    question: "Can I use Eduqra for corporate training?",
+    answer: "Yes! We provide specialized AI solutions for organizations to upskill their teams in Data Science, AI Automation, and modern technical workflows."
   },
   {
-    question: "Do I need prior knowledge for AI courses?",
-    answer: "We have courses for all levels! From 'AI Fundamentals' for beginners to 'Advanced Machine Learning Mastery' for professionals."
+    question: "When is the AI-Powered Tutors platform launching?",
+    answer: "Our 1-on-1 AI-Powered Tutors platform is currently in beta. You can sign up via our contact form to get early access and be notified of the official launch."
   }
 ];
 

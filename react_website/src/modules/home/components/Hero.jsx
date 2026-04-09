@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, CheckCircle2, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import './Hero.css';
 
 const Hero = () => {
@@ -47,10 +48,10 @@ const Hero = () => {
           </motion.p>
           
           <motion.div variants={itemVariants} className="hero-buttons">
-            <a href="/courses" className="btn btn-primary">
-              Explore Courses <ArrowRight size={20} />
-            </a>
-            <a href="/join" className="btn btn-outline">Join Now</a>
+            <Link to="/ai-solutions" className="btn btn-primary">
+              Explore Solutions <ArrowRight size={20} />
+            </Link>
+            <Link to="/contact" className="btn btn-outline">Contact Us</Link>
           </motion.div>
 
           <motion.div variants={itemVariants} className="hero-proof-row">
@@ -60,8 +61,8 @@ const Hero = () => {
               <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80" alt="user" />
             </div>
             <div className="proof-text">
-              <strong>12k+</strong>
-              <span>Global active learners</span>
+              <strong>AI First</strong>
+              <span>Empowering Modern Careers</span>
             </div>
           </motion.div>
         </motion.div>
