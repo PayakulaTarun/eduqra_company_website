@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import HomeView from './modules/home/views/HomeView';
 import AboutView from './modules/about/views/AboutView';
@@ -18,13 +18,15 @@ import ScrollToTop from './shared/components/ScrollToTop';
 import LaunchPopup from './shared/components/LaunchPopup';
 
 function App() {
+  const location = useLocation();
+
   return (
-    <Router>
+    <>
       <ScrollToTop />
       <LaunchPopup />
       <Navbar />
       <AnimatePresence mode="wait">
-        <Routes>
+        <Routes location={location} key={location.pathname}>
           <Route path="/" element={<HomeView />} />
           <Route path="/about" element={<AboutView />} />
           {/* Courses and Webinars temporarily hidden */}
@@ -40,7 +42,7 @@ function App() {
         </Routes>
       </AnimatePresence>
       <Footer />
-    </Router>
+    </>
   );
 }
 

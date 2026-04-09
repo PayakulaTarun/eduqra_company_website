@@ -1,3 +1,5 @@
+import React from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Brain, BarChart, ClipboardCheck, Target, ArrowRight, CheckCircle2 } from 'lucide-react';
 import './Solutions.css';
