@@ -2,8 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, User, ArrowRight, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { blogs } from '../../../data/blogs';
 import './BlogView.css';
-
 const BlogView = () => {
   return (
     <motion.main
@@ -12,6 +13,11 @@ const BlogView = () => {
       exit={{ opacity: 0 }}
       className="blog-page"
     >
+      <Helmet>
+        <title>Knowledge Hub | Eduqra AI EdTech Blog</title>
+        <meta name="description" content="Eduqra's Knowledge Hub provides expert insights into AI in education, career growth, tech trends, and the future of digital learning. Stay ahead in 2026." />
+        <meta name="keywords" content="AI in education, EdTech trends 2026, tech blog, career growth, educational insights" />
+      </Helmet>
       <section className="blog-hero">
         <div className="container">
           <motion.div 
@@ -31,62 +37,64 @@ const BlogView = () => {
         <div className="container blog-container">
           <div className="blog-main-content">
             {/* Featured Post */}
-            <motion.article 
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="featured-post-card"
-            >
-              <div className="featured-image-box">
-                <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80" alt="Future of AI" />
-              </div>
-              <div className="featured-content">
-                <div className="featured-meta">
-                  <Calendar size={14} className="meta-icon" />
-                  <span>March 15, 2026</span>
+            {blogs.length > 0 && (
+              <motion.article 
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="featured-post-card"
+              >
+                <div className="featured-image-box">
+                  <img src={blogs[0].featuredImage} alt={blogs[0].imageAlt} />
                 </div>
-                <Link to="/blog/1" className="featured-link-wrapper">
-                  <h2>The Future Of AI In Education</h2>
-                </Link>
-                <p>
-                  Discover how artificial intelligence is transforming modern learning experiences.
-                </p>
-                <Link to="/blog/1" className="read-more">Read More <ArrowRight size={14} /></Link>
-              </div>
-            </motion.article>
+                <div className="featured-content">
+                  <div className="featured-meta">
+                    <Calendar size={14} className="meta-icon" />
+                    <span>{blogs[0].date}</span>
+                  </div>
+                  <Link to={`/blog/${blogs[0].slug}`} className="featured-link-wrapper">
+                    <h2>{blogs[0].title}</h2>
+                  </Link>
+                  <p>
+                    {blogs[0].excerpt}
+                  </p>
+                  <Link to={`/blog/${blogs[0].slug}`} className="read-more">Read More <ArrowRight size={14} /></Link>
+                </div>
+              </motion.article>
+            )}
 
             {/* Standard Posts Grid */}
             <div className="standard-posts-grid">
-              {[1, 2].map((item) => (
+              {blogs.slice(1).map((item, index) => (
                 <motion.article 
-                  key={item}
+                  key={item.id}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: item * 0.15 }}
+                  transition={{ delay: index * 0.15 }}
                   className="standard-post-card"
                 >
-                  <Link to={`/blog/${item + 1}`} className="post-image-link">
-                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Students learning" />
+                  <Link to={`/blog/${item.slug}`} className="post-image-link">
+                    <img src={item.featuredImage} alt={item.imageAlt} />
                   </Link>
                   <div className="post-content">
                     <div className="post-meta-row">
                       <div className="meta-item">
                         <Calendar size={12} className="meta-icon" />
-                        <span>March 10, 2026</span>
+                        <span>{item.date}</span>
                       </div>
                       <div className="meta-item">
                         <User size={12} className="meta-icon" />
-                        <span>James Wilson</span>
+                        <span>{item.author}</span>
                       </div>
                     </div>
-                    <Link to={`/blog/${item + 1}`} className="post-title-link">
-                      <h3>Top Career Skills 2026</h3>
+                    <Link to={`/blog/${item.slug}`} className="post-title-link">
+                      <h3>{item.title}</h3>
                     </Link>
                     <p className="post-excerpt">
-                      The job market is evolving rapidly. Here are the essential skills you need to stay ahead.
+                      {item.excerpt}
                     </p>
-                    <Link to={`/blog/${item + 1}`} className="read-more">Read More <ArrowRight size={14} /></Link>
+                    <Link to={`/blog/${item.slug}`} className="read-more">Read More <ArrowRight size={14} /></Link>
                   </div>
                 </motion.article>
               ))}

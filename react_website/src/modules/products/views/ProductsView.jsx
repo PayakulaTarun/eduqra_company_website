@@ -1,6 +1,4 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet-async';
+import SEOManager from '../../../shared/components/SEOManager';
 import { Brain, Users, BarChart3, Target, ArrowRight, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './ProductsView.css';
@@ -56,13 +54,23 @@ const ProductsView = () => {
       exit={{ opacity: 0 }}
       className="products-page"
     >
-      <Helmet>
-        <title>Products | Eduqra AI Tutor, Adaptive Engine & Learning Analytics</title>
-        <meta name="description" content="Discover Eduqra's AI product ecosystem: 1-on-1 AI Tutors, Adaptive Learning Engines, and Skill-Gap Analytics for precision education." />
-        <meta name="keywords" content="AI tutor website, adaptive learning engine, skill-gap analytics, personalized education tech, automated assessment" />
-        <meta property="og:title" content="Eduqra AI Products | The Future of Learning" />
-        <meta property="og:description" content="Explore our revolutionary AI-powered education products designed for 1-on-1 personalized growth." />
-      </Helmet>
+      <SEOManager 
+        title="Products | Eduqra AI Hub for Personalized Learning"
+        description="Explore Eduqra's AI product ecosystem: 1-on-1 AI Tutors, Adaptive Engines, and Skill-Gap Analytics designed for precision education and career growth."
+        keywords="AI tutor website, adaptive learning engine, skill-gap analytics dashboard, personalized education software, automated AI assessment"
+        canonical="/products"
+        ogImage="https://eduqra.com/images/og-products.jpg"
+        schemaType="ItemList"
+        schemaData={{
+          "numberOfItems": productList.length,
+          "itemListElement": productList.map((p, i) => ({
+            "@type": "ListItem",
+            "position": i + 1,
+            "name": p.title,
+            "description": p.description
+          }))
+        }}
+      />
 
       {/* Header section */}
       <section className="products-hero section">
@@ -92,7 +100,7 @@ const ProductsView = () => {
           >
             <div className="featured-grid">
               <div className="featured-image">
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="1-on-1 Tutoring" />
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80" alt="Eduqra 1-on-1 AI Tutoring and Mentorship Ecosystem" />
                 <div className="featured-overlay">
                   <span className="featured-tag">Flagship Product</span>
                 </div>

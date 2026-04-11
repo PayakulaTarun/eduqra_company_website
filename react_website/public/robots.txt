@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /login
+Disallow: /join
+Disallow: /profile
 
 Sitemap: https://eduqra.com/sitemap.xml

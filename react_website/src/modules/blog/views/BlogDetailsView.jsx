@@ -4,9 +4,19 @@ import {
   Share2, Bookmark, Quote, Search, LayoutGrid, 
   PenTool, Monitor, GraduationCap, Globe, Send 
 } from 'lucide-react';
+import { useParams, Navigate, Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { blogs } from '../../../data/blogs';
 import './BlogDetailsView.css';
 
 const BlogDetailsView = () => {
+  const { slug } = useParams();
+  const blog = blogs.find(b => b.slug === slug);
+
+  if (!blog) {
+    return <Navigate to="/blog" />;
+  }
+
   return (
     <motion.main
       initial={{ opacity: 0 }}
@@ -14,26 +24,31 @@ const BlogDetailsView = () => {
       exit={{ opacity: 0 }}
       className="blog-details-page bg-light"
     >
+      <Helmet>
+        <title>{blog.seoTitle}</title>
+        <meta name="description" content={blog.metaDescription} />
+        <meta name="keywords" content={[blog.primaryKeyword, ...blog.secondaryKeywords].join(', ')} />
+      </Helmet>
       <div className="container blog-view-container">
         {/* Main Left Column */}
         <article className="blog-main-card">
           <div className="blog-feature-img">
-            <img src="https://images.unsplash.com/photo-1513258496099-48168024aec0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Students in library" />
+            <img src={blog.featuredImage} alt={blog.imageAlt} />
           </div>
           
           <div className="blog-article-content">
             <div className="blog-article-meta">
-              <span className="badge-academic">ACADEMIC</span>
-              <span className="meta-text">May 24, 2024 &bull; 8 min read</span>
+              <span className="badge-academic">{blog.category.toUpperCase()}</span>
+              <span className="meta-text">{blog.date} &bull; {blog.readTime}</span>
             </div>
             
-            <h1 className="article-h1">The Future of AI in Education</h1>
+            <h1 className="article-h1">{blog.title}</h1>
             
             <div className="author-row">
               <div className="author-info-left">
-                <div className="author-avatar">ED</div>
+                <div className="author-avatar">{blog.author.substring(0, 2).toUpperCase()}</div>
                 <div className="author-details">
-                  <strong>Eduqra Editorial</strong>
+                  <strong>{blog.author}</strong>
                   <span>Curated Knowledge Hub</span>
                 </div>
               </div>
@@ -43,32 +58,13 @@ const BlogDetailsView = () => {
               </div>
             </div>
 
-            <div className="article-body">
-              <p>
-                The educational landscape is undergoing its most significant transformation since the invention of the printing press. Artificial Intelligence is no longer a futuristic concept—it is actively reshaping how students learn, how educators teach, and how institutions operate at scale.
-              </p>
+            <div className="article-body" dangerouslySetInnerHTML={{ __html: blog.content }}></div>
 
-              <h3>The Shift Toward Personalized Pedagogy</h3>
-              <p>
-                One of the most profound impacts of AI in the classroom is the democratization of personalized learning. Historically, one-on-one tutoring was a luxury reserved for the few. Today, AI-driven adaptive learning platforms can analyze a student's performance in real-time, identifying cognitive gaps and tailoring curriculum delivery to match their unique pace and learning style.
-              </p>
-
-              <blockquote className="article-quote">
-                <Quote size={28} className="quote-icon" />
-                <p>
-                  "AI is not replacing the teacher; it is liberating the teacher from administrative fatigue, allowing them to focus on the human mentorship that no machine can replicate."
-                </p>
-              </blockquote>
-
-              <h3>Augmented Intelligence: The Teacher's New Ally</h3>
-              <p>
-                Beyond student-facing tools, generative AI is assisting educators in curriculum development. Lesson planning that previously took hours can now be drafted in seconds, providing a canvas for teachers to refine and customize. This "Augmented Intelligence" model ensures that high-quality educational resources are more accessible than ever before.
-              </p>
-
-              <h3>Ethical Considerations and the Road Ahead</h3>
-              <p>
-                As we integrate these technologies, we must remain vigilant about data privacy, algorithmic bias, and the digital divide. Ensuring that AI serves as a bridge rather than a barrier is the primary challenge for the next decade of academic curation.
-              </p>
+            <div className="video-seo-section" style={{ marginTop: '3rem', padding: '2rem', background: '#f8fafc', borderRadius: '8px' }}>
+              <h4>Related Video Resource</h4>
+              <h5>{blog.video.title}</h5>
+              <p><strong>Description:</strong> {blog.video.description}</p>
+              <p style={{fontStyle: 'italic', color: '#64748b'}}>Script Preview: {blog.video.script}</p>
             </div>
 
             <div className="article-footer-share">
@@ -122,26 +118,19 @@ const BlogDetailsView = () => {
 
           {/* Recent Posts Card */}
           <div className="sidebar-card">
-            <h4 className="sidebar-title">Recent Posts</h4>
+            <h4 className="sidebar-title">Other Articles</h4>
             <div className="recent-posts-list">
-              <div className="recent-post-item">
-                <div className="recent-img-box">
-                  <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=100&q=80" alt="document" />
-                </div>
-                <div className="recent-content">
-                  <h5>The Art of Digital Storytelling in 2024</h5>
-                  <span>2 days ago</span>
-                </div>
-              </div>
-              <div className="recent-post-item">
-                <div className="recent-img-box">
-                  <img src="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?w=100&q=80" alt="document" />
-                </div>
-                <div className="recent-content">
-                  <h5>10 Tools for Academic Research Efficiency</h5>
-                  <span>5 days ago</span>
-                </div>
-              </div>
+              {blogs.filter(b => b.slug !== slug).slice(0, 2).map((recentBlog) => (
+                <Link to={`/blog/${recentBlog.slug}`} key={recentBlog.slug} className="recent-post-item" style={{textDecoration: 'none', color: 'inherit', display: 'flex', gap: '12px'}}>
+                  <div className="recent-img-box" style={{flexShrink: 0}}>
+                    <img src={recentBlog.featuredImage} alt={recentBlog.imageAlt} style={{width: '60px', height: '60px', objectFit: 'cover', borderRadius: '4px'}} />
+                  </div>
+                  <div className="recent-content">
+                    <h5 style={{fontSize: '13px', margin: '0 0 4px', lineHeight: '1.4'}}>{recentBlog.title}</h5>
+                    <span style={{fontSize: '11px', color: '#64748b'}}>{recentBlog.date}</span>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
 

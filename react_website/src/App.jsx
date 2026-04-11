@@ -34,9 +34,8 @@ function App() {
           <Route path="/ai-solutions" element={<AISolutionsView />} />
           <Route path="/products" element={<ProductsView />} />
           <Route path="/profile" element={<ProfileView />} />
-          {/* Blog temporarily hidden */}
-          {/* <Route path="/blog" element={<BlogView />} />
-          <Route path="/blog/:id" element={<BlogDetailsView />} /> */}
+          <Route path="/blog" element={<BlogView />} />
+          <Route path="/blog/:slug" element={<BlogDetailsView />} />
           <Route path="/contact" element={<ContactView />} />
           {/* Course player temporarily hidden */}
           <Route path="/login" element={<LoginView />} />

@@ -61,12 +61,17 @@ const SEOManager = ({
       <meta property="og:title" content={ogTitle || title} />
       <meta property="og:description" content={ogDescription || description} />
       {ogImage && <meta property="og:image" content={ogImage} />}
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:type" content="website" />
+      <meta property="og:url" content={fullCanonical} />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={ogTitle || title} />
       <meta name="twitter:description" content={ogDescription || description} />
+      {ogImage && <meta name="twitter:image" content={ogImage} />}
+      <meta name="twitter:site" content="@eduqra" />
 
       {/* JSON-LD Schema Injection */}
       <script type="application/ld+json">

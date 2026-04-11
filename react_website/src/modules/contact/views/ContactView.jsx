@@ -1,4 +1,4 @@
-import React from 'react';
+import SEOManager from '../../../shared/components/SEOManager';
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock, Send, Globe } from 'lucide-react';
 import { InstagramIcon, LinkedinIcon } from '../../../shared/components/SocialIcons';
@@ -12,6 +12,13 @@ const ContactView = () => {
       exit={{ opacity: 0 }}
       className="contact-page"
     >
+      <SEOManager 
+        title="Contact Eduqra | Partners & Support for AI Education"
+        description="Get in touch with the Eduqra team for support, partnerships, or inquiries about our AI-powered learning solutions. Located in Hyderabad, India."
+        keywords="Eduqra contact, AI education support India, EdTech partnerships, contact artificial intelligence learning platform"
+        canonical="/contact"
+        schemaType="ContactPage"
+      />
       <section className="contact-hero section">
         <div className="container">
           <motion.div 

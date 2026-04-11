@@ -1,5 +1,4 @@
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEOManager from '../../../shared/components/SEOManager';
 import { motion } from 'framer-motion';
 import { Brain, BarChart, Zap, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -13,13 +12,20 @@ const AISolutionsView = () => {
       exit={{ opacity: 0 }}
       className="ai-solutions-page"
     >
-      <Helmet>
-        <title>AI Solutions | Eduqra Personalized Learning & Adaptive AI Tools</title>
-        <meta name="description" content="Explore Eduqra's suite of AI solutions: AI Personal Tutors, Learning Analytics, and Adaptive Systems designed to revolutionize modern education." />
-        <meta name="keywords" content="AI education solutions, adaptive learning platforms, AI tutoring technology, student analytics AI, future of edtech" />
-        <meta property="og:title" content="Eduqra AI Solutions | Intelligent Future of Learning" />
-        <meta property="og:description" content="Unlock the potential of AI-driven education with our personalized learning tools." />
-      </Helmet>
+      <SEOManager 
+        title="AI Solutions | Intelligent Tutors & Adaptive Learning | Eduqra"
+        description="Discover Eduqra's AI-driven educational tools: Personalized AI Tutors, Predictive Analytics, and Adaptive Learning systems for hyper-personalized education."
+        keywords="AI tutoring technology, adaptive learning systems, predictive analytics in education, AI education software India"
+        canonical="/ai-solutions"
+        ogImage="https://eduqra.com/images/og-solutions.jpg"
+        schemaType="BreadcrumbList"
+        schemaData={{
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://eduqra.com/" },
+            { "@type": "ListItem", "position": 2, "name": "AI Solutions", "item": "https://eduqra.com/ai-solutions" }
+          ]
+        }}
+      />
 
       <section className="solutions-hero">
         <div className="container hero-container">
@@ -43,7 +49,7 @@ const AISolutionsView = () => {
             animate={{ opacity: 1, x: 0 }}
             className="hero-image-wrapper"
           >
-            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80" alt="AI Solutions" />
+            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80" alt="Eduqra AI Personal Tutor and Adaptive Learning Solutions" />
           </motion.div>
         </div>
       </section>

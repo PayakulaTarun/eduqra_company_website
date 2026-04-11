@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { Mail, Lock, LogIn, ArrowLeft } from 'lucide-react';
 import { signInWithGoogle } from '../../../shared/lib/firebase';
+import SEOManager from '../../../shared/components/SEOManager';
 import './Auth.css';
 
 const LoginView = () => {
@@ -24,6 +25,11 @@ const LoginView = () => {
       exit={{ opacity: 0, x: 20 }}
       className="auth-wrapper"
     >
+      <SEOManager 
+        title="Login | Eduqra AI Learning Portal"
+        description="Access your personalized AI learning dashbord and continue your professional upskilling journey with Eduqra."
+        canonical="/login"
+      />
       <div className="auth-container">
         <div className="auth-card">
           <Link to="/" className="back-link"><ArrowLeft size={18} /> Back to Home</Link>
@@ -65,7 +71,7 @@ const LoginView = () => {
           </p>
         </div>
         <div className="auth-side">
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Auth" />
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Eduqra Login - Personalized AI Education Portal" />
           <div className="auth-overlay">
             <h3>Start Your Journey</h3>
             <p>Join over 50,000+ students learning the skills of the future.</p>

@@ -4,12 +4,19 @@ import SEOManager from '../../../shared/components/SEOManager';
 import Hero from '../components/Hero';
 
 import Features from '../components/Features';
+import WhoIsFor from '../components/WhoIsFor';
+import HowItWorks from '../components/HowItWorks';
+import WhyDifferent from '../components/WhyDifferent';
+import UseCases from '../components/UseCases';
+import Comparison from '../components/Comparison';
 import Solutions from '../components/Solutions';
 // Courses and Webinars hidden temporarily
 import Advantages from '../components/Advantages';
 import AppPromo from '../components/AppPromo';
 import Testimonials from '../components/Testimonials';
+import BlogPreview from '../components/BlogPreview';
 import FAQ from '../components/FAQ';
+import SEOContent from '../components/SEOContent';
 import CTA from '../components/CTA';
 
 const HomeView = () => {
@@ -21,18 +28,28 @@ const HomeView = () => {
       transition={{ duration: 0.4, ease: "easeInOut" }}
     >
       <SEOManager 
-        title="Eduqra | Leading AI-Powered Personalized Learning Platform"
-        description="Master future-ready skills with Eduqra. We offer adaptive AI tutoring, 1-on-1 mentorship, and predictive learning analytics for students and professionals."
-        keywords="AI tutor, adaptive learning, personalized education, Skill-gap analytics, 1-on-1 AI tutoring India"
+        title="Eduqra | AI-Powered Personalized Learning Platform"
+        description="Master global skills with Eduqra. We provide 24/7 AI tutoring, adaptive learning paths, and predictive skill-gap analytics for students and professionals in India."
+        keywords="AI tutor India, adaptive learning platform, personalized education AI, skill-gap analytics, 1-on-1 AI mentorship"
+        ogImage="https://eduqra.com/images/og-home.jpg"
+        canonical="/"
         schemaType="FAQPage"
         schemaData={{
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "How does Eduqra improve student learning through AI?",
+              "name": "What is Eduqra's AI Personal Tutor?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Eduqra utilizes state-of-the-art AI models to create adaptive learning paths, provide 24/7 AI tutoring, and offer real-time skill-gap analytics."
+                "text": "Eduqra's AI Personal Tutor is a 24/7 learning companion that provides personalized guidance, real-time feedback, and adaptive study plans tailored to each student's unique learning style."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does adaptive learning work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Our adaptive learning system uses machine learning to identify your knowledge gaps and adjust the curriculum difficulty and pace in real-time."
               }
             }
           ]
@@ -48,11 +65,18 @@ const HomeView = () => {
       <Hero />
 
       <Features />
+      <WhoIsFor />
+      <HowItWorks />
+      <WhyDifferent />
+      <UseCases />
+      <Comparison />
       <Solutions />
       {/* Courses and Webinars hidden temporarily */}
       <Advantages />
       <Testimonials />
+      <BlogPreview />
       <FAQ />
+      <SEOContent />
       <CTA />
     </motion.main>
   );

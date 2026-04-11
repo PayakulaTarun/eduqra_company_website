@@ -50,14 +50,17 @@
 
 .hero-title {
   font-family: var(--font-family);
-  font-size: 1.35rem; /* Decreased for side-by-side mobile */
+  font-size: 1.2rem; /* Decreased for side-by-side mobile */
   line-height: 1.2;
   margin-bottom: var(--space-2);
   color: var(--color-secondary);
 }
 
 @media (min-width: 1024px) {
-  .hero-title { font-size: var(--fs-hero); text-align: left; }
+  .hero-title { 
+    font-size: clamp(1.8rem, 3.2vw, 3.5rem); 
+    text-align: left; 
+  }
 }
 
 .text-gradient {
@@ -81,7 +84,7 @@
   .hero-desc { 
     margin-left: 0;
     padding: 0;
-    font-size: var(--fs-lg);
+    font-size: var(--fs-base);
     max-width: 600px;
   }
 }

@@ -1,0 +1,32 @@
+.seo-content {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-12);
+  background-color: var(--color-bg-primary); /* Blend seamlessly with the surrounding page */
+}
+
+.seo-content-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-8);
+}
+
+.seo-text-block p {
+  color: var(--color-text-muted);
+  font-size: 0.85rem; /* Noticeably smaller text for SEO-focused paragraphs */
+  line-height: 1.8;
+  text-align: justify;
+  margin: 0;
+  opacity: 0.8; /* Slight fade so it doesn't shout at users, but crawlers don't care about opacity */
+  transition: opacity var(--transition-fast);
+}
+
+.seo-text-block p:hover {
+  opacity: 1; /* Small interactive treat */
+}
+
+@media (min-width: 768px) {
+  .seo-text-block p {
+    font-size: 0.95rem; /* readable but not primary on desktop */
+  }
+}

@@ -1,0 +1,178 @@
+.comparison {
+  position: relative;
+  overflow: hidden;
+}
+
+.comparison-header {
+  margin-bottom: var(--space-12);
+}
+
+.comparison-cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  position: relative;
+  align-items: center;
+  margin-bottom: var(--space-12);
+}
+
+@media (min-width: 1024px) {
+  .comparison-cards-wrapper {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0; /* They will be separated by the vs badge */
+  }
+}
+
+.comp-card {
+  width: 100%;
+  max-width: 450px;
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 1024px) {
+  .comp-card {
+    width: 42%;
+  }
+
+  .traditional-card {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-right: var(--space-12);
+    /* Push slightly towards center */
+    margin-right: -10px;
+  }
+
+  .eduqra-card {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-left: var(--space-12);
+    z-index: 2; /* Put above traditional slightly for shadow casting */
+  }
+}
+
+/* Styling for Traditional Card */
+.traditional-card {
+  background: white;
+  border: 1px solid var(--color-border);
+}
+
+.traditional-card .comp-card-header h3 {
+  color: var(--color-text-muted);
+  font-size: var(--fs-2xl);
+  margin-bottom: var(--space-6);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: var(--space-4);
+}
+
+.icon-traditional {
+  color: #EF4444; /* Red for traditional X */
+  flex-shrink: 0;
+}
+
+/* Styling for Eduqra Card */
+.eduqra-card {
+  background: linear-gradient(145deg, #1e3a8a, #2563eb);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--shadow-xl);
+}
+
+.eduqra-card .comp-card-header {
+  position: relative;
+}
+
+.premium-glow {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 100px;
+  height: 100px;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.eduqra-card .comp-card-header h3 {
+  color: white;
+  font-size: var(--fs-3xl);
+  margin-bottom: var(--space-6);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: var(--space-4);
+}
+
+.icon-eduqra {
+  color: #34D399; /* Bright Emerald Green for checkmarks */
+  flex-shrink: 0;
+}
+
+/* Shared List Styles */
+.comp-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.comp-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--fs-lg);
+  line-height: 1.4;
+}
+
+.traditional-card .comp-list li {
+  color: var(--color-secondary);
+}
+
+.eduqra-card .comp-list li {
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+}
+
+/* VS Badge */
+.vs-badge {
+  background: white;
+  color: var(--color-primary);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: var(--fs-lg);
+  box-shadow: var(--shadow-lg);
+  z-index: 10;
+  border: 2px solid var(--color-bg-primary); /* Blend border */
+}
+
+@media (min-width: 1024px) {
+  .vs-badge {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+/* Outro Text */
+.comparison-outro {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: var(--space-12);
+  text-align: center;
+  color: var(--color-primary); /* Use primary blue for impact */
+  font-size: var(--fs-xl);
+  font-weight: 800;
+  line-height: 1.4;
+}

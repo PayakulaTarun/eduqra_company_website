@@ -39,12 +39,12 @@ const Hero = () => {
           </motion.div>
           
           <motion.h1 variants={itemVariants} className="hero-title">
-            AI-Powered Smart Learning<br />
-            <span className="text-gradient">For Future Skills</span>
+            The Ultimate AI Personal Tutor <br />
+            <span className="text-gradient">& Adaptive Learning Engine</span>
           </motion.h1>
           
           <motion.p variants={itemVariants} className="hero-desc">
-            Master AI, Data Science, and career-focused skills with personalized learning experiences designed for the modern era.
+            Transform your educational journey with Eduqra. We leverage advanced artificial intelligence to provide personalized 1-on-1 tutoring, skill-gap analytics, and a completely adaptive learning ecosystem designed for real-world mastery.
           </motion.p>
           
           <motion.div variants={itemVariants} className="hero-buttons">
