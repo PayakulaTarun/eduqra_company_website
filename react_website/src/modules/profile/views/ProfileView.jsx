@@ -30,7 +30,7 @@ const ProfileView = () => {
             <div className="profile-card user-info-card">
               <div className="profile-avatar">
                 {currentUser.photoURL ? (
-                  <img src={currentUser.photoURL} alt={currentUser.displayName} />
+                  <img loading="lazy" src={currentUser.photoURL} alt={currentUser.displayName} />
                 ) : (
                   <div className="avatar-placeholder">{currentUser.displayName?.charAt(0) || 'U'}</div>
                 )}

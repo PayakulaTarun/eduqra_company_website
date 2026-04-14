@@ -32,7 +32,7 @@ const SignUpView = () => {
       />
       <div className="auth-container signup">
         <div className="auth-side">
-          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Join Eduqra AI-Powered Learning Community" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Join Eduqra AI-Powered Learning Community" />
           <div className="auth-overlay">
             <h3>Join Eduqra Today</h3>
             <p>The most advanced AI learning platform for professionals.</p>

@@ -1,0 +1,107 @@
+.about-problem {
+  padding: 40px 0 100px;
+  background-color: var(--color-bg); 
+  position: relative;
+}
+
+.problem-header {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.problem-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.problem-subtitle {
+  font-size: 1.15rem;
+  color: #52525b; 
+  line-height: 1.7;
+  text-align: left;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.problem-subtitle p {
+  margin-bottom: 16px;
+}
+
+.problem-subtitle p:last-child {
+  margin-bottom: 0;
+}
+
+.problem-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.problem-card {
+  background: #ffffff;
+  border: 1px solid #e4e4e7;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.problem-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  border-color: #fca5a5;
+}
+
+.problem-icon-wrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: rgba(239, 68, 68, 0.1); 
+  color: #ef4444; /* red-500, representing danger/problem */
+  border-radius: 12px;
+  margin-bottom: 24px;
+  transition: background 0.3s ease;
+}
+
+.problem-card:hover .problem-icon-wrapper {
+  background: rgba(239, 68, 68, 0.15);
+}
+
+.problem-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+}
+
+.problem-card-desc {
+  font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .problem-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .problem-cards {
+    grid-template-columns: 1fr;
+  }
+  .problem-title {
+    font-size: 2rem;
+  }
+  .about-problem {
+    padding: 30px 0 60px;
+  }
+}

@@ -1,85 +1,54 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Target, Eye, CheckCircle2 } from 'lucide-react';
+import { Globe2, Rocket } from 'lucide-react';
 import './AboutMissionVision.css';
 
 const AboutMissionVision = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.3
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, x: -10 },
-    visible: { 
-      opacity: 1, 
-      x: 0,
-      transition: { duration: 0.4 }
-    }
-  };
-
   return (
-    <section className="about-mv section bg-light">
-      <div className="container mv-grid">
-        <motion.div 
-          initial={{ opacity: 0, y: 30, scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mv-card mission"
-        >
-          <div className="mv-icon mission-icon">
-            <Target size={32} />
-          </div>
-          <h3>Our Mission</h3>
-          <p>
-            To empower learners worldwide by providing accessible, AI-driven, and career-focused education that bridges the gap between potential and opportunity.
-          </p>
-          <motion.ul 
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="mv-list"
+    <section className="about-mv section">
+      <div className="mv-background-mesh"></div>
+      <div className="container relative">
+        <div className="mv-grid">
+          {/* Mission Side */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6 }}
+            className="mv-block"
           >
-            <motion.li variants={itemVariants}><CheckCircle2 size={20} className="check-icon" /> Accessible To Everyone</motion.li>
-            <motion.li variants={itemVariants}><CheckCircle2 size={20} className="check-icon" /> AI-Driven Personalization</motion.li>
-            <motion.li variants={itemVariants}><CheckCircle2 size={20} className="check-icon" /> Career-Focused Outcomes</motion.li>
-          </motion.ul>
-        </motion.div>
+            <div className="mv-icon-wrapper mission-theme">
+              <Rocket size={32} />
+            </div>
+            <h3 className="mv-title">The Tactical Mission</h3>
+            <p className="mv-statement highlight-statement">
+              To systematically dismantle learning barriers by building the most powerful, adaptive, and career-aligned educational AI engine in the world.
+            </p>
+            <p className="mv-narrative">
+              We empower learners by providing hyper-accessible, AI-driven education that actively bridges the gap between raw potential and economic opportunity. We focus ruthlessly on what works: personalized curriculums, production-ready skills, and data-driven mentorship. Every feature we build is designed to accelerate careers and redefine what it means to be industry-ready.
+            </p>
+          </motion.div>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 30, scale: 0.95 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mv-card vision"
-        >
-          <div className="mv-icon vision-icon">
-            <Eye size={32} />
-          </div>
-          <h3>Our Vision</h3>
-          <p>
-            To become the global leader in AI-powered education, creating a world where every individual has the tools and knowledge to thrive in the age of intelligence.
-          </p>
-          <motion.ul 
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            className="mv-list"
+          {/* Vision Side */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="mv-block"
           >
-            <motion.li variants={itemVariants}><CheckCircle2 size={20} className="check-icon" /> Global Education Leader</motion.li>
-            <motion.li variants={itemVariants}><CheckCircle2 size={20} className="check-icon" /> Innovation In Learning</motion.li>
-            <motion.li variants={itemVariants}><CheckCircle2 size={20} className="check-icon" /> Empowering Intelligence</motion.li>
-          </motion.ul>
-        </motion.div>
+            <div className="mv-icon-wrapper vision-theme">
+              <Globe2 size={32} />
+            </div>
+            <h3 className="mv-title">The Global Vision</h3>
+            <p className="mv-statement highlight-statement">
+              To forge the intelligent infrastructure of global education—making elite, career-launching knowledge accessible to every human on earth.
+            </p>
+            <p className="mv-narrative">
+              The next leaps in human innovation depend on unlocking the millions of brilliant minds actively sidelined by the geographic and financial barriers of traditional education. We envision a future where high-tier learning is scalable, autonomous, and radically accessible. Eduqra isn’t simply updating the classroom; we are deploying a worldwide cognitive engine specifically designed to power the next generation of global innovators, operators, and leaders.
+            </p>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

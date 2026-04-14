@@ -49,7 +49,7 @@ const AISolutionsView = () => {
             animate={{ opacity: 1, x: 0 }}
             className="hero-image-wrapper"
           >
-            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80" alt="Eduqra AI Personal Tutor and Adaptive Learning Solutions" />
+            <img loading="lazy" src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80" alt="Eduqra AI Personal Tutor and Adaptive Learning Solutions" />
           </motion.div>
         </div>
       </section>

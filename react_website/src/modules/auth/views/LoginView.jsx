@@ -71,7 +71,7 @@ const LoginView = () => {
           </p>
         </div>
         <div className="auth-side">
-          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Eduqra Login - Personalized AI Education Portal" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Eduqra Login - Personalized AI Education Portal" />
           <div className="auth-overlay">
             <h3>Start Your Journey</h3>
             <p>Join over 50,000+ students learning the skills of the future.</p>

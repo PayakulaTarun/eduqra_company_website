@@ -9,8 +9,10 @@ const LaunchPopup = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Only show popup on the Home page
-    if (location.pathname !== '/') {
+    const hasClosed = localStorage.getItem('eduqraLaunchPopupClosed');
+
+    // Only show popup on the Home page and if not closed
+    if (location.pathname !== '/' || hasClosed) {
       setIsVisible(false);
       return;
     }
@@ -24,6 +26,7 @@ const LaunchPopup = () => {
 
   const handleClose = () => {
     setIsVisible(false);
+    localStorage.setItem('eduqraLaunchPopupClosed', 'true');
   };
 
   return (

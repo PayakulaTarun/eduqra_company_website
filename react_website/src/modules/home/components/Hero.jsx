@@ -56,9 +56,9 @@ const Hero = () => {
 
           <motion.div variants={itemVariants} className="hero-proof-row">
             <div className="avatars-group">
-              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80" alt="user" />
-              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80" alt="user" />
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80" alt="user" />
+              <img loading="lazy" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80" alt="user" />
+              <img loading="lazy" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80" alt="user" />
+              <img loading="lazy" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80" alt="user" />
             </div>
             <div className="proof-text">
               <strong>AI First</strong>

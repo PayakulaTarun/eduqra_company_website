@@ -2,9 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import SEOManager from '../../../shared/components/SEOManager';
 import AboutHero from '../components/AboutHero';
+import AboutProblem from '../components/AboutProblem';
+import AboutSolution from '../components/AboutSolution';
+import AboutServices from '../components/AboutServices';
 import AboutStory from '../components/AboutStory';
 import AboutMissionVision from '../components/AboutMissionVision';
 import AboutTeam from '../components/AboutTeam';
+import AboutCTA from '../components/AboutCTA';
 import './AboutView.css';
 
 const AboutView = () => {
@@ -17,21 +21,38 @@ const AboutView = () => {
       className="about-page"
     >
       <SEOManager 
-        title="About Eduqra | Our Mission to Democratize AI Learning"
-        description="Learn about Eduqra's journey to transform education using artificial intelligence. Based in Hyderabad, we are building the future of adaptive learning for global students."
+        title="About Eduqra | The World's Foremost AI Learning Platform"
+        description="Discover Eduqra, the cutting-edge AI EdTech platform natively engineered to democratize global intelligence through adaptive learning and 1-on-1 AI tutoring."
+        keywords="AI learning platform, adaptive learning ecosystem, AI education technology, personalized mentorship"
         canonical="/about"
-        schemaType="BreadcrumbList"
+        schemaType="Organization"
         schemaData={{
-          "itemListElement": [
-            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://eduqra.com/" },
-            { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://eduqra.com/about" }
-          ]
+          "slogan": "Born From Frustration. Built For the Future.",
+          "founders": [
+            {
+              "@type": "Person",
+              "name": "Tarun Chandra",
+              "jobTitle": "CEO & Founder",
+              "sameAs": "https://www.linkedin.com/in/payakulatarunchandra"
+            },
+            {
+              "@type": "Person",
+              "name": "V. Bhanu Shankar",
+              "jobTitle": "Co-Founder",
+              "sameAs": "https://www.linkedin.com/in/bhanu-v7/"
+            }
+          ],
+          "description": "Eduqra is a bleeding-edge educational technology platform utilizing sophisticated AI models to deliver hyper-personalized, adaptive learning to global students."
         }}
       />
       <AboutHero />
+      <AboutProblem />
+      <AboutSolution />
+      <AboutServices />
       <AboutStory />
       <AboutMissionVision />
       <AboutTeam />
+      <AboutCTA />
     </motion.main>
   );
 };

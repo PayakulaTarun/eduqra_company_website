@@ -36,7 +36,7 @@ const Navbar = () => {
     >
       <div className="container navbar-container">
         <Link to="/" className="logo">
-          <img src="/images/eduqra_logo.jpeg" alt="Eduqra" />
+          <img loading="lazy" src="/images/eduqra_logo.jpeg" alt="Eduqra" />
         </Link>
         
         {/* Desktop Navigation */}

@@ -153,7 +153,7 @@ const CoursesView = () => {
                 className="course-card"
               >
                 <div className="course-image">
-                  <img src={course.image} alt={course.title} />
+                  <img loading="lazy" src={course.image} alt={course.title} />
                   <span className="course-badge">{course.category}</span>
                 </div>
                 <div className="course-content">

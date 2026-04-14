@@ -29,7 +29,7 @@ export const blogs = [
 
       <h3>2. Emancipating the Educator</h3>
       <p>Educators often suffer from administrative burdens. AI in education intervenes exactly here. Grading, attendance tracking, and syllabus generation now consume a fraction of the time they once did. With generative AI copilots, educators are reverting to their most critical role: <strong>human mentors and facilitators</strong>.</p>
-      <img src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80" alt="Educator working in tandem with an AI learning dashboard" class="blog-in-article-img" style="width: 100%; border-radius: 8px; margin: 2rem 0;"/>
+      <img loading="lazy" src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80" alt="Educator working in tandem with an AI learning dashboard" class="blog-in-article-img" style="width: 100%; border-radius: 8px; margin: 2rem 0;"/>
 
       <h3>3. The Deepening Focus on Ethics and E-E-A-T</h3>
       <p>Deploying AI doesn't negate the necessity for experience, expertise, authoritativeness, and trustworthiness (E-E-A-T). By prioritizing robust AI ethics policies, platforms like <a href="/ai-solutions">Eduqra's AI Solutions</a> guarantee algorithm transparency, ensuring equitable learning opportunities that strictly prohibit bias.</p>
@@ -74,7 +74,7 @@ export const blogs = [
       <h3>The Mechanics of Adaptive Learning Algorithms</h3>
       <p>An intelligent platform utilizes natural language processing and predictive analytics to measure comprehension in real time. If a user spends heavily irregular time on a specific assessment question, the system flags a conceptual gap. Consequently, the user receives remedial micro-lessons instantly.</p>
       
-      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Diverse students collaborating with AI tablets in modern workspace" class="blog-in-article-img" style="width: 100%; border-radius: 8px; margin: 2rem 0;"/>
+      <img loading="lazy" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Diverse students collaborating with AI tablets in modern workspace" class="blog-in-article-img" style="width: 100%; border-radius: 8px; margin: 2rem 0;"/>
 
       <h3>Decreasing Dropout Rates Through Engagement Prompts</h3>
       <p>Low student engagement historically correlates with high dropout rates in asynchronous learning. AI personalization intervenes intelligently. By analyzing usage patterns, predictive algorithms trigger highly targeted check-ins, motivation nudges, or dynamic difficulty adjustments.</p>
@@ -122,7 +122,7 @@ export const blogs = [
       <h3>1. Advanced Prompt Engineering and Context Design</h3>
       <p>Communicating with Large Language Models (LLMs) is a nuanced craft. Constructing dense, constraint-oriented prompts that yield highly specific, pre-formatted, and accurate data arrays is arguably the most fundamental of the emerging AI skills.</p>
       
-      <img src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Person writing prompt architecture on a glass board" class="blog-in-article-img" style="width: 100%; border-radius: 8px; margin: 2rem 0;"/>
+      <img loading="lazy" src="https://images.unsplash.com/photo-1542626991-cbc4e32524cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Person writing prompt architecture on a glass board" class="blog-in-article-img" style="width: 100%; border-radius: 8px; margin: 2rem 0;"/>
 
       <h3>2. AI Workflow Automation</h3>
       <p>Understanding how to chain distinct AI APIs together to automate legacy workflows defines operational efficiency. Professionals must know how to trigger an AI event in platform A that writes and executes a script natively in platform B.</p>

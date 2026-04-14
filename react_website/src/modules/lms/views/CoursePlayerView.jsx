@@ -48,7 +48,7 @@ const CoursePlayerView = () => {
                  <Play fill="white" size={48} />
                </motion.button>
              </div>
-             <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200" alt="Video Placeholder" />
+             <img loading="lazy" src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200" alt="Video Placeholder" />
           </div>
 
           <div className="lesson-details">

@@ -71,7 +71,7 @@ const CourseDetailsView = () => {
           </div>
           <div className="course-hero-video">
             <div className="video-thumb-container">
-              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Video Placeholder" />
+              <img loading="lazy" src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Video Placeholder" />
               <div className="play-btn-large">
                 <Play fill="#000" size={32} />
               </div>
@@ -122,7 +122,7 @@ const CourseDetailsView = () => {
               <h2>Your Instructor</h2>
               <div className="instructor-card">
                 <div className="instructor-img">
-                  <img src={courseDetails.instructor.img} alt={courseDetails.instructor.name} />
+                  <img loading="lazy" src={courseDetails.instructor.img} alt={courseDetails.instructor.name} />
                 </div>
                 <div className="instructor-info">
                   <h3>{courseDetails.instructor.name}</h3>

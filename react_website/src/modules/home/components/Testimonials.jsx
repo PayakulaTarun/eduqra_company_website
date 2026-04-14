@@ -83,7 +83,7 @@ const Testimonials = () => {
               </div>
               <p className="testimonial-text">{testimonial.text}</p>
               <div className="testimonial-author">
-                <img src={testimonial.image} alt={testimonial.author} className="author-image" />
+                <img loading="lazy" src={testimonial.image} alt={testimonial.author} className="author-image" />
                 <div className="author-info">
                   <h4>{testimonial.author}</h4>
                   <span>{testimonial.role}</span>

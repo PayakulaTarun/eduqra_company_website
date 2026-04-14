@@ -1,46 +1,200 @@
+.about-team {
+  padding: 120px 0;
+  background-color: #000000; 
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+}
+
+.team-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.team-eyebrow {
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #a78bfa; 
+  font-weight: 700;
+  margin-bottom: 20px;
+  display: inline-block;
+  background: rgba(167, 139, 250, 0.1);
+  padding: 6px 16px;
+  border-radius: 100px;
+  border: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+.team-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin-top: 50px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 64px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.team-card {
-  text-align: center;
+.team-card-premium {
+  display: flex;
+  flex-direction: column;
 }
 
-.member-image {
-  border-radius: 20px;
+.team-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 520px; 
+  border-radius: 24px;
   overflow: hidden;
-  margin-bottom: 20px;
-  background-color: #F1F5F9;
-  aspect-ratio: 1;
+  background: #111; 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
 }
 
-.member-image img {
+.team-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  filter: grayscale(0%) contrast(1.05);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.team-card:hover .member-image img {
+.team-image-gradient {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0) 80%);
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+
+.team-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 32px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.team-name-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  transform: translateY(20px);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.team-name {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 4px;
+  line-height: 1.1;
+}
+
+.team-role {
+  font-size: 1rem;
+  color: #a78bfa; 
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.team-linkedin {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 10px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+}
+
+.team-linkedin:hover {
+  background: #0a66c2; 
   transform: scale(1.1);
 }
 
-.member-info h3 {
-  font-size: 1.25rem;
-  margin-bottom: 5px;
+.team-bio-reveal {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  margin-top: 0;
 }
 
-.member-info p {
-  color: var(--color-primary);
-  font-weight: 600;
-  font-size: 0.9rem;
+.team-bio {
+  font-size: 1rem;
+  color: #cbd5e1; 
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Hover effects */
+.team-card-premium:hover .team-image {
+  filter: grayscale(100%) contrast(1.1);
+  transform: scale(1.05);
+}
+
+.team-card-premium:hover .team-name-row {
+  transform: translateY(0);
+}
+
+.team-card-premium:hover .team-bio-reveal {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 16px;
+}
+
+.team-card-premium:hover .team-image-gradient {
+  background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.85) 60%, rgba(0,0,0,0.3) 100%);
+  backdrop-filter: blur(4px);
+}
+
+@media (max-width: 992px) {
+  .team-grid {
+    gap: 40px;
+  }
 }
 
 @media (max-width: 768px) {
   .team-grid {
     grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+  .team-image-wrapper {
+    height: 480px; 
+  }
+  .team-title {
+    font-size: 2.5rem;
+  }
+  .about-team {
+    padding: 80px 0;
+  }
+  .team-name-row {
+    transform: translateY(0);
+  }
+  .team-bio-reveal {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 16px;
   }
 }

@@ -98,7 +98,7 @@ const BlogPreview = () => {
             <motion.div key={index} className="blog-card" variants={itemVariants}>
               <Link to={blog.link} className="blog-card-link-wrapper">
                 <div className="blog-card-img-wrapper">
-                  <img src={blog.image} alt={blog.title} />
+                  <img loading="lazy" src={blog.image} alt={blog.title} />
                   <span className="blog-category-badge">{blog.category}</span>
                 </div>
                 

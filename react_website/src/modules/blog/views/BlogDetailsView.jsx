@@ -33,7 +33,7 @@ const BlogDetailsView = () => {
         {/* Main Left Column */}
         <article className="blog-main-card">
           <div className="blog-feature-img">
-            <img src={blog.featuredImage} alt={blog.imageAlt} />
+            <img loading="lazy" src={blog.featuredImage} alt={blog.imageAlt} />
           </div>
           
           <div className="blog-article-content">
@@ -123,7 +123,7 @@ const BlogDetailsView = () => {
               {blogs.filter(b => b.slug !== slug).slice(0, 2).map((recentBlog) => (
                 <Link to={`/blog/${recentBlog.slug}`} key={recentBlog.slug} className="recent-post-item" style={{textDecoration: 'none', color: 'inherit', display: 'flex', gap: '12px'}}>
                   <div className="recent-img-box" style={{flexShrink: 0}}>
-                    <img src={recentBlog.featuredImage} alt={recentBlog.imageAlt} style={{width: '60px', height: '60px', objectFit: 'cover', borderRadius: '4px'}} />
+                    <img loading="lazy" src={recentBlog.featuredImage} alt={recentBlog.imageAlt} style={{width: '60px', height: '60px', objectFit: 'cover', borderRadius: '4px'}} />
                   </div>
                   <div className="recent-content">
                     <h5 style={{fontSize: '13px', margin: '0 0 4px', lineHeight: '1.4'}}>{recentBlog.title}</h5>

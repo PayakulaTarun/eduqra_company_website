@@ -45,7 +45,7 @@ const BlogView = () => {
                 className="featured-post-card"
               >
                 <div className="featured-image-box">
-                  <img src={blogs[0].featuredImage} alt={blogs[0].imageAlt} />
+                  <img loading="lazy" src={blogs[0].featuredImage} alt={blogs[0].imageAlt} />
                 </div>
                 <div className="featured-content">
                   <div className="featured-meta">
@@ -75,7 +75,7 @@ const BlogView = () => {
                   className="standard-post-card"
                 >
                   <Link to={`/blog/${item.slug}`} className="post-image-link">
-                    <img src={item.featuredImage} alt={item.imageAlt} />
+                    <img loading="lazy" src={item.featuredImage} alt={item.imageAlt} />
                   </Link>
                   <div className="post-content">
                     <div className="post-meta-row">

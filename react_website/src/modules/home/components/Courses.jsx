@@ -80,7 +80,7 @@ const Courses = () => {
               viewport={{ once: true, margin: "-50px" }}
             >
               <div className="course-image">
-                <img src={course.image} alt={course.title} />
+                <img loading="lazy" src={course.image} alt={course.title} />
               </div>
               <div className="course-content">
                 <div className="course-meta">

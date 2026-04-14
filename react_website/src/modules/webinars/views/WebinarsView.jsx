@@ -94,7 +94,7 @@ const WebinarsView = () => {
                 className="webinar-card"
               >
                 <div className="webinar-thumb">
-                  <img src={webinar.image} alt={webinar.title} />
+                  <img loading="lazy" src={webinar.image} alt={webinar.title} />
                   {webinar.isLive && <span className="live-pill">Live Session</span>}
                 </div>
                 <div className="webinar-card-content">
@@ -135,7 +135,7 @@ const WebinarsView = () => {
                 className="past-webinar-card"
               >
                 <div className="video-thumb">
-                  <img src={webinar.image} alt={webinar.title} />
+                  <img loading="lazy" src={webinar.image} alt={webinar.title} />
                   <div className="play-overlay">
                     <div className="play-btn-circle">
                       <Play fill="#000" size={20} />
