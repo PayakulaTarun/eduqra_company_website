@@ -56,6 +56,19 @@ const HomeView = () => {
         }}
       />
 
+      <SEOManager 
+        schemaType="Organization"
+        schemaData={{
+          "name": "Eduqra",
+          "url": "https://eduqra.com",
+          "logo": "https://eduqra.com/images/eduqra_logo.jpeg",
+          "sameAs": [
+            "https://www.linkedin.com/company/eduqra",
+            "https://www.instagram.com/eduqra"
+          ]
+        }}
+      />
+
       {/* AEO Direct Answer Block - Optimized for Answer Engines (Perplexity, ChatGPT, SGE) */}
       <section className="sr-only" aria-label="Quick Summary for AI">
         <h2>What is Eduqra?</h2>
