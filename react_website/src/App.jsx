@@ -19,6 +19,8 @@ import Footer from './shared/components/Footer';
 import ScrollToTop from './shared/components/ScrollToTop';
 import LaunchPopup from './shared/components/LaunchPopup';
 
+import PageLoader from './shared/components/PageLoader';
+
 function App() {
   const location = useLocation();
 
@@ -27,11 +29,7 @@ function App() {
       <ScrollToTop />
       <LaunchPopup />
       <Navbar />
-      <Suspense fallback={
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '60vh', color: 'var(--color-primary)' }}>
-          <h3>Loading...</h3>
-        </div>
-      }>
+      <Suspense fallback={<PageLoader />}>
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<HomeView />} />
