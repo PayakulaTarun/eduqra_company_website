@@ -220,3 +220,28 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
   white-space: nowrap;
   border-width: 0;
 }
+
+/* Contextual Internal Links */
+.context-link, 
+.context-link-alt, 
+.context-link-inline {
+  color: var(--color-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.context-link:hover, 
+.context-link-alt:hover, 
+.context-link-inline:hover {
+  color: var(--color-primary-dark);
+  text-decoration-thickness: 2px;
+  background-color: rgba(37, 99, 235, 0.05);
+  border-radius: 4px;
+  padding: 2px 4px;
+  margin: -2px -4px;
+}
+

@@ -44,7 +44,7 @@ const WhyDifferent = () => {
           <h2 className="section-title text-left">Why Eduqra Stands Out</h2>
           
           <p className="why-different-intro">
-            Unlike traditional learning platforms, Eduqra combines artificial intelligence with education to create a truly adaptive learning experience.
+            Unlike traditional learning platforms, Eduqra combines artificial intelligence with education to create a truly <a href="/ai-solutions" className="context-link-alt">adaptive learning experience</a>.
           </p>
 
           <p className="why-different-outro">

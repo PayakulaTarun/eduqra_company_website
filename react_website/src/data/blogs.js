@@ -1,7 +1,7 @@
 export const blogs = [
   {
     id: "future-of-ai-education",
-    title: "How AI in Education Will Transform Learning by 2026",
+    title: "Future of AI in Education: Transforming Learning with AI Skills in 2026",
     seoTitle: "The Future of AI in Education (2026 Data) | Eduqra",
     metaDescription: "Discover how AI in education is transforming pedagogical approaches, boosting student success, and empowering educators globally. Read our comprehensive 2026 guide.",
     slug: "future-of-ai-education",
@@ -11,13 +11,13 @@ export const blogs = [
     author: "Eduqra Editorial",
     readTime: "12 min read",
     featuredImage: "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Futuristic digital learning environment with AI interfaces",
+    imageAlt: "Futuristic AI education blog interface showing personalized digital learning environment",
     video: {
       title: "How AI Is Reshaping Education Globally",
       description: "A deep dive into artificial intelligence and the future classroom.",
       script: "[0:00] The traditional classroom was built for the industrial age. But tomorrow's learning? That's powered by AI. [0:45] We delve into adaptive algorithms that read cognitive cues..."
     },
-    excerpt: "Artificial intelligence is no longer speculative in educational spheres. Here is how AI in education guarantees personalized, scalable knowledge transfer.",
+    excerpt: "Discover how AI in education is revolutionizing the modern classroom by boosting student engagement and AI skills. Learn how adaptive learning systems leverage AI learning to deliver personalized results for educators.",
     content: `
       <h2>The Global Shift: Adapting to AI in Education</h2>
       <p>The conversation surrounding <strong>AI in education</strong> has fundamentally evolved from experimental tech to critical infrastructure. In this new educational era, algorithmic assistance ensures that both teachers and students thrive. According to recent analyses, integrating AI tutoring models boosts student proficiency rates dramatically by tailoring content exactly to cognitive needs.</p>
@@ -48,7 +48,7 @@ export const blogs = [
   },
   {
     id: "ai-personalization-edtech",
-    title: "How AI Personalization Is Revolutionizing EdTech Platforms",
+    title: "AI Personalization in EdTech: Scaling Individualized AI Learning Experiences",
     seoTitle: "AI Personalization in EdTech: The Ultimate Guide | Eduqra",
     metaDescription: "Explore how AI personalization in EdTech scales individualized tutoring, reduces dropout rates, and engages modern diverse learner profiles.",
     slug: "ai-personalization-edtech",
@@ -58,13 +58,13 @@ export const blogs = [
     author: "Eduqra Product Strategy",
     readTime: "9 min read",
     featuredImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Student looking at personalized data graphs on a tablet",
+    imageAlt: "Student utilizing an AI learning platform for personalized data-driven insights on a tablet",
     video: {
       title: "Scaling One-to-One Tutoring with AI",
       description: "How generative models simulate personal tutors natively in platforms.",
       script: "[0:00] Imagine a teacher for every student. Sounds impossible, right? [0:30] With AI personalization in EdTech, algorithms map unique brain processes to..."
     },
-    excerpt: "Generic learning management systems are obsolete. Step inside the algorithmic revolution that brings completely individualized learning to the masses.",
+    excerpt: "Generic systems are obsolete. Step into the revolution of AI personalization in EdTech that brings individualized AI learning to the masses. Explore the latest EdTech trends that are redefining educational infrastructure.",
     content: `
       <h2>Beyond The Basic LMS: The Need for AI Personalization</h2>
       <p>For decades, digital learning was essentially a PDF viewed through a browser. The true promise of education technology only emerged with the integration of <strong>AI personalization in EdTech</strong>. Today, systems don't just deliver content; they react, predict, and curate learning experiences.</p>
@@ -96,7 +96,7 @@ export const blogs = [
   },
   {
     id: "emerging-ai-skills-2026",
-    title: "Top 10 Emerging AI Skills Every Professional Needs in 2026",
+    title: "10 Essential Emerging AI Skills for Career Growth in 2026",
     seoTitle: "Top 10 Emerging AI Skills to Master in 2026 | Eduqra",
     metaDescription: "Future-proof your career. Learn the top 10 emerging AI skills for professionals in 2026, including prompt engineering, algorithmic bias auditing, and more.",
     slug: "emerging-ai-skills-2026",
@@ -106,13 +106,13 @@ export const blogs = [
     author: "Eduqra Career Development",
     readTime: "10 min read",
     featuredImage: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Professional analyzing data and AI metrics on multiple screens",
+    imageAlt: "Modern professional mastering emerging AI skills and metrics on multiple high-tech screens",
     video: {
       title: "Career Future-Proofing: Navigating the AI Wave",
       description: "Which skills actually matter when AI can code and write?",
       script: "[0:00] In 2026, the question isn't whether AI can do your job. The question is: Can you manage the AI doing your job? [0:25] AI fluency is the new baseline..."
     },
-    excerpt: "AI will not replace professionals, but professionals who use AI will reliably replace those who don't. Master these emerging tech competencies.",
+    excerpt: "Master the top emerging AI skills required for career survival in 2026. From AI fluency to complex workflow automation, learn how to stay ahead of the latest EdTech trends and dominate the labor market.",
     content: `
       <h2>The Shift From Coding to Commanding</h2>
       <p>As artificial intelligence matures, the labor market demands a radical pivot in human capital development. The highest-paying roles no longer strictly focus on low-level programming. Instead, the priority has shifted toward <strong>emerging AI skills</strong> that orchestrate complex machine logic to solve abstract business problems.</p>

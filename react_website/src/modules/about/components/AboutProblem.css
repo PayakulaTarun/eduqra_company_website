@@ -1,73 +1,151 @@
+/* ============================================================
+   About Problem — Two-Column Layout (Image Left | Content Right)
+   ============================================================ */
 .about-problem {
-  padding: 40px 0 100px;
-  background-color: var(--color-bg); 
+  padding: 100px 0;
+  background-color: #fafafa;
+  background-image: 
+    radial-gradient(#e5e7eb 0.5px, transparent 0.5px);
+  background-size: 24px 24px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Two-column inner ── */
+.problem-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+/* ── Left: Image column ── */
+.problem-image-col {
   position: relative;
 }
 
+.problem-image-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.problem-image-glow {
+  position: absolute;
+  inset: -24px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(239, 68, 68, 0.1) 0%, rgba(99, 102, 241, 0.1) 50%, transparent 75%);
+  filter: blur(50px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.problem-image {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: 24px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.1),
+    0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.problem-image:hover {
+  transform: scale(1.02) translateY(-5px);
+}
+
+/* ── Right: content column ── */
+.problem-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Reduced from 32px */
+  justify-content: center;
+}
+
+/* Header */
 .problem-header {
-  max-width: 800px;
-  margin: 0 auto 60px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Reduced from 12px */
+}
+
+.problem-eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  border-radius: 20px;
+  padding: 5px 14px;
+  width: fit-content;
 }
 
 .problem-title {
-  font-size: 2.75rem;
+  font-size: 2.1rem;
   font-weight: 800;
   color: #1a1a1a;
-  margin-bottom: 24px;
   line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0;
 }
 
 .problem-subtitle {
-  font-size: 1.15rem;
-  color: #52525b; 
-  line-height: 1.7;
-  text-align: left;
-  max-width: 760px;
-  margin: 0 auto;
+  font-size: 0.95rem; /* Slightly smaller */
+  color: #52525b;
+  line-height: 1.6; /* Tighter line height */
 }
 
 .problem-subtitle p {
-  margin-bottom: 16px;
+  margin-bottom: 8px; /* Reduced from 12px */
 }
 
 .problem-subtitle p:last-child {
   margin-bottom: 0;
 }
 
+/* Cards — stacked vertically on right side */
 .problem-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Reduced from 14px */
 }
 
 .problem-card {
+  display: flex;
+  align-items: center; /* Center icon with text */
+  gap: 16px;
   background: #ffffff;
   border: 1px solid #e4e4e7;
-  border-radius: 16px;
-  padding: 32px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
+  border-radius: 12px; /* Slightly tighter radius */
+  padding: 14px 20px; /* Reduced from 20px 24px */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: default;
 }
 
 .problem-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
-  border-color: #fca5a5;
+  transform: translateX(6px);
+  box-shadow: 0 8px 28px rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.3);
 }
 
 .problem-icon-wrapper {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 56px;
-  height: 56px;
-  background: rgba(239, 68, 68, 0.1); 
-  color: #ef4444; /* red-500, representing danger/problem */
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  background: rgba(239, 68, 68, 0.08);
+  color: #ef4444;
   border-radius: 12px;
-  margin-bottom: 24px;
   transition: background 0.3s ease;
 }
 
@@ -75,33 +153,63 @@
   background: rgba(239, 68, 68, 0.15);
 }
 
+.problem-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 .problem-card-title {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 700;
   color: #1a1a1a;
-  margin-bottom: 12px;
+  margin: 0;
 }
 
 .problem-card-desc {
-  font-size: 1.05rem;
+  font-size: 0.85rem; /* Slightly smaller */
   color: #64748b;
-  line-height: 1.6;
+  line-height: 1.5; /* Tighter line height */
+  margin: 0;
 }
 
-@media (max-width: 992px) {
-  .problem-cards {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .problem-cards {
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 1024px) {
+  .problem-inner {
     grid-template-columns: 1fr;
+    gap: 48px;
   }
+
+  .problem-image-col {
+    display: flex;
+    justify-content: center;
+  }
+
+  .problem-image {
+    max-width: 480px;
+  }
+
   .problem-title {
-    font-size: 2rem;
+    font-size: 1.85rem;
   }
+}
+
+@media (max-width: 640px) {
   .about-problem {
-    padding: 30px 0 60px;
+    padding: 70px 0;
+  }
+
+  .problem-inner {
+    gap: 36px;
+  }
+
+  .problem-title {
+    font-size: 1.6rem;
+  }
+
+  .problem-card {
+    padding: 16px 18px;
   }
 }

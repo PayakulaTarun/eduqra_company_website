@@ -60,7 +60,14 @@ const BlogDetailsView = () => {
 
             <div className="article-body" dangerouslySetInnerHTML={{ __html: blog.content }}></div>
 
-            <div className="video-seo-section" style={{ marginTop: '3rem', padding: '2rem', background: '#f8fafc', borderRadius: '8px' }}>
+            <div className="internal-linking-box">
+              <h4>Build Your Future with Eduqra</h4>
+              <p>
+                Interested in applying these insights? Explore our <Link to="/ai-solutions" className="context-link-inline">AI Learning Platform</Link> to see how we transform theoretical education into practical mastery. You can also view our full suite of <Link to="/products" className="context-link-inline">Smart Learning Systems</Link> designed for students and institutions.
+              </p>
+            </div>
+
+            <div className="video-seo-section" style={{ marginTop: '2rem', padding: '2rem', background: '#f8fafc', borderRadius: '8px' }}>
               <h4>Related Video Resource</h4>
               <h5>{blog.video.title}</h5>
               <p><strong>Description:</strong> {blog.video.description}</p>
@@ -80,6 +87,26 @@ const BlogDetailsView = () => {
                   <Globe size={16} /> Facebook
                 </button>
               </div>
+            </div>
+          </div>
+
+          <div className="related-articles-section">
+            <h3 className="section-title-sm">Related Insights</h3>
+            <div className="related-grid">
+              {blogs
+                .filter(b => b.slug !== slug && b.category === blog.category)
+                .slice(0, 3)
+                .map(related => (
+                  <Link to={`/blog/${related.slug}`} key={related.id} className="related-card">
+                    <div className="related-img">
+                      <img loading="lazy" src={related.featuredImage} alt={related.imageAlt} />
+                    </div>
+                    <div className="related-info">
+                      <span className="related-date">{related.date}</span>
+                      <h4>{related.title}</h4>
+                    </div>
+                  </Link>
+                ))}
             </div>
           </div>
         </article>

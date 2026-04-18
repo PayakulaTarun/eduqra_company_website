@@ -73,7 +73,7 @@ const Solutions = () => {
               <div className={`icon-wrapper ${card.color}`}>
                 {card.icon}
               </div>
-              <h4 className="card-title">{card.title}</h4>
+              <h3 className="card-title">{card.title}</h3>
               <p className="card-text">{card.text}</p>
             </motion.div>
           ))}
