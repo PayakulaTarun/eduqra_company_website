@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "firebase/auth";
 import { getFirestore, doc, setDoc, getDoc, serverTimestamp } from "firebase/firestore";
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 // TODO: Replace with your Eduqra Firebase project config
 const firebaseConfig = {
@@ -17,7 +18,28 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+export const analytics = typeof window !== 'undefined' ? getAnalytics(app) : null;
 export const googleProvider = new GoogleAuthProvider();
+
+/**
+ * Custom Analytics Event Tracker
+ */
+export const trackEvent = (eventName, eventParams = {}) => {
+  try {
+    if (analytics) {
+      logEvent(analytics, eventName, eventParams);
+    }
+    // Also push to GTM dataLayer if loaded
+    if (typeof window !== 'undefined' && window.dataLayer) {
+      window.dataLayer.push({
+        event: eventName,
+        ...eventParams
+      });
+    }
+  } catch (error) {
+    console.warn("Analytics error: ", error);
+  }
+};
 
 /**
  * Authentication Helper: Google Signup/Login

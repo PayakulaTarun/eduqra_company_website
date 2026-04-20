@@ -32,7 +32,7 @@ const Webinars = () => {
             src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&q=80" 
             alt="Library Study Group" 
             className="webinar-main-img"
-          />
+          loading="lazy" />
         </motion.div>
         
         <div className="webinars-content">

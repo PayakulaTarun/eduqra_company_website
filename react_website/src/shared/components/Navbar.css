@@ -42,12 +42,22 @@
   display: none;
 }
 
+.mobile-only-actions {
+  display: none;
+}
+
 @media (max-width: 1023px) {
   .mobile-menu-toggle {
     display: flex;
     color: var(--color-secondary);
     z-index: 1001;
     padding: var(--space-2);
+  }
+  
+  .mobile-only-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
   }
 }
 

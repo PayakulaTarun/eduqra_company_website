@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Users, CheckCircle2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { trackEvent } from '../../../shared/lib/firebase';
 import './Hero.css';
 
 const Hero = () => {
@@ -39,30 +40,54 @@ const Hero = () => {
           </motion.div>
           
           <motion.h1 variants={itemVariants} className="hero-title">
-            The Ultimate AI Personal Tutor <br />
-            <span className="text-gradient">& Adaptive Learning Engine</span>
+            AI-powered <br />
+            <span className="text-gradient">personalized learning platform</span>
           </motion.h1>
           
           <motion.p variants={itemVariants} className="hero-desc">
-            Transform your educational journey with Eduqra. We leverage advanced artificial intelligence to provide personalized 1-on-1 tutoring, skill-gap analytics, and a completely adaptive learning ecosystem designed for real-world mastery.
+            Stop struggling with generic education. Eduqra provides a smart learning system tailored to your unique pace. Experience predictive progress tracking, real-time AI tutoring, and mastery-based curriculums in India and beyond.
           </motion.p>
           
           <motion.div variants={itemVariants} className="hero-buttons">
-            <Link to="/ai-solutions" className="btn btn-primary">
-              Explore Solutions <ArrowRight size={20} />
+            <Link 
+              to="/ai-solutions" 
+              className="btn btn-primary"
+              onClick={() => trackEvent('cta_click', { button_name: 'Start Learning - Hero', location: 'Hero Area' })}
+            >
+              Start Learning <ArrowRight size={20} />
             </Link>
-            <Link to="/contact" className="btn btn-outline">Contact Us</Link>
+            <Link 
+              to="/contact" 
+              className="btn btn-outline"
+              onClick={() => trackEvent('cta_click', { button_name: 'Try AI Demo - Hero', location: 'Hero Area' })}
+            >
+              Try AI Demo
+            </Link>
           </motion.div>
 
           <motion.div variants={itemVariants} className="hero-proof-row">
-            <div className="avatars-group">
-              <img loading="lazy" src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&q=80" alt="user" />
-              <img loading="lazy" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&q=80" alt="user" />
-              <img loading="lazy" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80" alt="user" />
+            <div className="proof-metrics">
+              <div className="metric">
+                <strong>100k+</strong>
+                <span>Active Learners</span>
+              </div>
+              <div className="metric">
+                <strong>98%</strong>
+                <span>AI Accuracy</span>
+              </div>
+              <div className="metric">
+                <strong>95%</strong>
+                <span>Success Rate</span>
+              </div>
             </div>
-            <div className="proof-text">
-              <strong>AI First</strong>
-              <span>Empowering Modern Careers</span>
+          </motion.div>
+          <motion.div variants={itemVariants} className="hero-partners" style={{ marginTop: '20px' }}>
+            <span style={{ fontSize: '0.8rem', color: '#64748b', display: 'block', marginBottom: '8px', textTransform: 'uppercase', letterSpacing: '1px' }}>Trusted by</span>
+            <div style={{ display: 'flex', gap: '20px', alignItems: 'center', opacity: 0.6 }}>
+              {/* Partner Logos Placeholders */}
+              <div style={{ fontWeight: 'bold', fontSize: '1.2rem', fontFamily: 'serif' }}>EduCorp</div>
+              <div style={{ fontWeight: 'bold', fontSize: '1.2rem', fontFamily: 'sans-serif' }}>TechLearn</div>
+              <div style={{ fontWeight: 'bold', fontSize: '1.2rem', fontFamily: 'monospace' }}>INSTITUTE X</div>
             </div>
           </motion.div>
         </motion.div>

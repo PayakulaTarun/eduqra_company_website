@@ -11,7 +11,7 @@ const AboutUs = () => {
              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
              alt="About Eduqra" 
              className="about-image"
-          />
+          loading="lazy" />
           <div className="experience-badge">
             <span className="years">10+</span>
             <span className="text">Years of<br/>Excellence</span>

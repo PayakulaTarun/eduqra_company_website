@@ -6,25 +6,25 @@ const testimonials = [
   {
     id: 1,
     rating: 5,
-    text: `"Eduqra's AI-driven approach helped me master complex concepts in half the time. The personalized path was a game-changer."`,
+    text: `"Eduqra's AI-driven approach helped me master complex coding concepts in half the time. Having a personalized 24/7 AI tutor is a game-changer."`,
     author: 'Sarah Jenkins',
-    role: 'Product Manager',
+    role: 'Computer Science Student',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80'
   },
   {
     id: 2,
     rating: 5,
-    text: `"The real-world projects gave me the confidence to apply for senior roles. I landed my dream job within 3 months of taking your course."`,
+    text: `"The smart learning system immediately identified my weak points in math and adapted the curriculum. I improved my scores by 40% in just two months."`,
     author: 'David Chen',
-    role: 'Data Scientist',
+    role: 'High School Senior',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80'
   },
   {
     id: 3,
     rating: 5,
-    text: `"Your class's comprehensive, hands-on and real-time interaction that's rare, there is simply no better approach to mastering AI."`,
+    text: `"As an educator, seeing an AI learning platform in India achieve this level of hyper-personalization is incredible. My students are far more engaged."`,
     author: 'Michael Rodriguez',
-    role: 'Frontend Developer',
+    role: 'University Lecturer',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80'
   }
 ];

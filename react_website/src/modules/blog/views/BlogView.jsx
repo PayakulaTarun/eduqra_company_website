@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, User, ArrowRight, Search, Inbox } from 'lucide-react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEOManager from '../../../shared/components/SEOManager';
 import { blogs } from '../../../data/blogs';
 import './BlogView.css';
 const BlogView = () => {
@@ -49,81 +49,42 @@ const BlogView = () => {
       exit={{ opacity: 0, scale: 0.98 }}
       transition={{ duration: 0.4, ease: "easeInOut" }}
     >
-      <Helmet>
-        <title>AI Education Blog | Insights & Learning Articles | Eduqra</title>
-        <meta name="description" content="Read the official Eduqra AI education blog for expert AI learning articles and EdTech insights. Master the future of learning with our technical deep-dives." />
-        <meta name="keywords" content="AI education blog, AI learning articles, EdTech insights, AI in education, digital learning 2026" />
-        <link rel="canonical" href="https://eduqra.com/blog" />
-        
-        {/* Open Graph Tags */}
-        <meta property="og:title" content="AI Education Blog | Insights & Learning Articles | Eduqra" />
-        <meta property="og:description" content="Explore expert AI in education insights and authoritative AI learning articles from the Eduqra team." />
-        <meta property="og:image" content="https://eduqra.com/images/og-blog.jpg" />
-        <meta property="og:url" content="https://eduqra.com/blog" />
-        <meta property="og:type" content="website" />
-
-        {/* Twitter Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="AI Education Blog | Insights & Learning Articles | Eduqra" />
-        <meta name="twitter:description" content="Read the official Eduqra EdTech blog for expert AI in education insights and career-boosting AI learning articles." />
-        <meta name="twitter:image" content="https://eduqra.com/images/og-blog.jpg" />
-
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@graph": [
-              {
-                "@type": "Blog",
-                "@id": "https://eduqra.com/blog/#blog",
-                "name": "Eduqra AI Education Blog",
-                "description": "Expert insights into AI in education, AI skills, and EdTech trends.",
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "Eduqra AI Solutions",
-                  "logo": "https://eduqra.com/logo.png"
-                }
-              },
-              {
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                  {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Home",
-                    "item": "https://eduqra.com/"
-                  },
-                  {
-                    "@type": "ListItem",
-                    "position": 2,
-                    "name": "Blog"
-                  }
-                ]
-              },
-              {
-                "@type": "BlogPosting",
-                "headline": blogs[0].title,
-                "description": blogs[0].excerpt,
-                "image": blogs[0].featuredImage,
-                "author": {
-                  "@type": "Organization",
-                  "name": "Eduqra Editorial"
-                },
-                "publisher": {
-                  "@type": "Organization",
-                  "name": "Eduqra AI Solutions",
-                  "logo": "https://eduqra.com/logo.png"
-                },
-                "datePublished": "2026-04-11",
-                "mainEntityOfPage": {
-                  "@type": "WebPage",
-                  "@id": `https://eduqra.com/blog/${blogs[0].slug}`
-                }
-              }
-            ]
-          })}
-        </script>
-      </Helmet>
+      <SEOManager 
+        title="AI Education Blog | Insights & Learning Articles | Eduqra"
+        description="Read the official Eduqra AI education blog for expert AI learning articles and EdTech insights. Master the future of learning with our technical deep-dives."
+        keywords="AI education blog, AI learning articles, EdTech insights, AI in education, digital learning 2026"
+        ogImage="https://eduqra.com/images/og-blog.jpg"
+        canonical="/blog"
+        schemaType="Blog"
+        schemaData={{
+          "@id": "https://eduqra.com/blog/#blog",
+          "name": "Eduqra AI Education Blog",
+          "description": "Expert insights into AI in education, AI skills, and EdTech trends.",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Eduqra AI Solutions",
+            "logo": "https://eduqra.com/logo.png"
+          }
+        }}
+      />
+      <SEOManager
+        schemaType="BreadcrumbList"
+        schemaData={{
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://eduqra.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Blog"
+            }
+          ]
+        }}
+      />
       <section className="blog-hero">
         <div className="container">
           <motion.div 
@@ -317,9 +278,9 @@ const BlogView = () => {
             <div className="sidebar-widget categories-widget">
               <h3>Categories</h3>
               <ul className="categories-list">
-                <li><Link to="/blog?category=Academic">Academic AI</Link></li>
-                <li><Link to="/blog?category=Tech">Tech Strategy</Link></li>
-                <li><Link to="/blog?category=Career">Career Development</Link></li>
+                <li><Link to="/blog?category=AI">AI</Link></li>
+                <li><Link to="/blog?category=Education">Education</Link></li>
+                <li><Link to="/blog?category=Technology">Technology</Link></li>
               </ul>
             </div>
           </aside>

@@ -130,34 +130,35 @@
   .hero-proof-row { justify-content: flex-start; }
 }
 
-.avatars-group {
+.proof-metrics {
   display: flex;
-  margin-right: var(--space-2);
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.avatars-group img {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 2px solid white;
-  margin-left: -12px;
-}
-
-.avatars-group img:first-child { margin-left: 0; }
-
-.proof-text {
+.metric {
   display: flex;
   flex-direction: column;
   text-align: left;
+  border-left: 2px solid var(--color-border);
+  padding-left: var(--space-3);
 }
 
-.proof-text strong {
-  font-size: var(--fs-base);
-  color: var(--color-secondary);
+.metric:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+
+.metric strong {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  font-weight: 800;
   line-height: 1;
+  margin-bottom: 2px;
 }
 
-.proof-text span {
+.metric span {
   font-size: var(--fs-xs);
   color: var(--color-text-muted);
 }

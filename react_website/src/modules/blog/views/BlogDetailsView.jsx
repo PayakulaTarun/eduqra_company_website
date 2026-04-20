@@ -5,7 +5,7 @@ import {
   PenTool, Monitor, GraduationCap, Globe, Send 
 } from 'lucide-react';
 import { useParams, Navigate, Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
+import SEOManager from '../../../shared/components/SEOManager';
 import { blogs } from '../../../data/blogs';
 import './BlogDetailsView.css';
 
@@ -24,11 +24,65 @@ const BlogDetailsView = () => {
       exit={{ opacity: 0 }}
       className="blog-details-page bg-light"
     >
-      <Helmet>
-        <title>{blog.seoTitle}</title>
-        <meta name="description" content={blog.metaDescription} />
-        <meta name="keywords" content={[blog.primaryKeyword, ...blog.secondaryKeywords].join(', ')} />
-      </Helmet>
+      <SEOManager 
+        title={blog.seoTitle || blog.title}
+        description={blog.metaDescription}
+        keywords={[blog.primaryKeyword, ...(blog.secondaryKeywords || [])].join(', ')}
+        ogImage={blog.featuredImage}
+        canonical={`/blog/${blog.slug}`}
+        schemaType="Article"
+        schemaData={{
+          "headline": blog.title,
+          "image": [
+            blog.featuredImage
+          ],
+          "datePublished": new Date(blog.date).toISOString(),
+          "dateModified": new Date(blog.date).toISOString(),
+          "author": [{
+            "@type": "Person",
+            "name": blog.author
+          }],
+          "publisher": {
+            "@type": "Organization",
+            "name": "Eduqra"
+          }
+        }}
+      />
+      <SEOManager 
+        schemaType="BreadcrumbList"
+        schemaData={{
+          "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://eduqra.com/"
+          },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://eduqra.com/blog"
+          },{
+            "@type": "ListItem",
+            "position": 3,
+            "name": blog.title
+          }]
+        }}
+      />
+      {blog.faqs && blog.faqs.length > 0 && (
+        <SEOManager
+          schemaType="FAQPage"
+          schemaData={{
+            "mainEntity": blog.faqs.map(faq => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
+              }
+            }))
+          }}
+        />
+      )}
       <div className="container blog-view-container">
         {/* Main Left Column */}
         <article className="blog-main-card">
@@ -128,16 +182,16 @@ const BlogDetailsView = () => {
             <p className="sidebar-subtitle">Browse by topic</p>
             <ul className="category-links">
               <li className="active">
-                <LayoutGrid size={18} /> All Posts
+                <Link to="/blog" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: '10px' }}><LayoutGrid size={18} /> All Posts</Link>
               </li>
               <li>
-                <PenTool size={18} /> Design
+                <Link to="/blog?category=AI" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: '10px' }}><PenTool size={18} /> AI</Link>
               </li>
               <li>
-                <Monitor size={18} /> Tech
+                <Link to="/blog?category=Technology" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: '10px' }}><Monitor size={18} /> Technology</Link>
               </li>
               <li>
-                <GraduationCap size={18} /> Academic
+                <Link to="/blog?category=Education" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: '10px' }}><GraduationCap size={18} /> Education</Link>
               </li>
             </ul>
             <button className="btn btn-primary w-100" style={{ marginTop: '20px', borderRadius: '8px' }}>Subscribe</button>

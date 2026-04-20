@@ -8,43 +8,91 @@ import './ProductsView.css';
 const productList = [
   {
     id: 'ai-tutors',
-    title: 'AI-Powered Tutors',
-    subtitle: 'Launching Soon',
+    title: 'Eduqra AI Personal Tutor',
+    tagline: 'Your 24/7 intelligent learning companion',
+    keyword: 'AI tutor platform',
+    blogLink: '/blog/future-of-ai-education',
+    problem: 'Students often get stuck at 2 AM with no teacher available, losing motivation and abandoning their course.',
     description: 'Our flagship 1-on-1 tutoring platform where learners connect with expert mentors powered by proprietary AI matching and live assistance.',
+    howItWorks: [
+      { step: 1, text: 'Ask a question natural language' },
+      { step: 2, text: 'AI tutor analyzes your code or logic' },
+      { step: 3, text: 'Receive Socratic guidance to find the answer' }
+    ],
+    targetAudience: 'Students and self-taught developers',
+    useCase: 'A student debugging a complex React component at midnight gets instant, personalized hints without receiving the direct answer, fostering true understanding.',
     icon: <Users size={32} />,
     color: 'blue',
     features: ['Live 1-on-1 Sessions', 'AI-Matched Mentors', 'Personalized Study Plans'],
-    isNew: true
+    isNew: true,
+    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80',
+    imgAlt: 'Eduqra AI tutor platform showing personalized student dashboard'
   },
   {
     id: 'personalization-engine',
     title: 'Adaptive Learning Engine',
-    subtitle: 'Available Now',
+    tagline: 'A curriculum that bends to your brain',
+    keyword: 'adaptive learning system',
+    blogLink: '/blog?topic=adaptive-assessments',
+    problem: 'One-size-fits-all courses force advanced students to be bored and beginners to be overwhelmed.',
     description: 'A deep-learning core that analyzes user behavior and retention to dynamically adjust curriculum difficulty and content delivery.',
+    howItWorks: [
+      { step: 1, text: 'Engine profiles your baseline knowledge' },
+      { step: 2, text: 'Monitors reading speed and quiz accuracy' },
+      { step: 3, text: 'Automatically adjusts next module difficulty' }
+    ],
+    targetAudience: 'Institutions and lifelong learners',
+    useCase: 'A professional upskilling in Python breezes through basics; the engine immediately skips boilerplate loops and starts introducing advanced Data Science concepts.',
     icon: <Brain size={32} />,
     color: 'indigo',
     features: ['Cognitive Load Tracking', 'Dynamic Difficulty', 'Knowledge Map Visualization'],
-    isNew: false
+    isNew: false,
+    image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
+    imgAlt: 'Adaptive learning AI system processing student data in real-time'
   },
   {
     id: 'analytics-dashboard',
-    title: 'Skill-Gap Analytics',
-    subtitle: 'Available Now',
+    title: 'Skill-Gap Analytics Dashboard',
+    tagline: 'Visualize your path to career readiness',
+    keyword: 'predictive learning analytics',
+    blogLink: '/blog/emerging-ai-skills-2026',
+    problem: 'Learners spend months studying without knowing if they are actually employable in the current job market.',
     description: 'A comprehensive suite for learners and organizations to visualize progress, identify weaknesses, and predict future performance.',
+    howItWorks: [
+      { step: 1, text: 'Take baseline evaluations across skill trees' },
+      { step: 2, text: 'AI maps your skills against live job market data' },
+      { step: 3, text: 'Get a visual heatmap of your weak points' }
+    ],
+    targetAudience: 'Career pivoters and enterprise training managers',
+    useCase: 'An aspiring Data Scientist sees a red heatmap indicator on "SQL Joins", allowing them to focus studying specifically on database management before an interview.',
     icon: <BarChart3 size={32} />,
     color: 'emerald',
     features: ['Predictive Performance', 'Real-time Skill Heatmaps', 'Industrial Benchmarking'],
-    isNew: false
+    isNew: false,
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80',
+    imgAlt: 'Skill-gap analytics visualization within the Eduqra AI learning platform'
   },
   {
     id: 'assessment-system',
     title: 'Smart Assessment Platform',
-    subtitle: 'In Early Access',
+    tagline: 'Beyond multiple-choice testing',
+    keyword: 'AI assessment system',
+    blogLink: '/blog?topic=generative-ai',
+    problem: 'Multiple choice tests don\'t measure real-world performance, and grading projects manually is impossible at scale.',
     description: 'Beyond multiple choice. Our AI evaluates project-based submissions and provides deep coding or logical feedback automatically.',
+    howItWorks: [
+      { step: 1, text: 'Upload a complete project or code repository' },
+      { step: 2, text: 'AI parses logic, syntax, and architecture' },
+      { step: 3, text: 'Generates a line-by-line constructive code review' }
+    ],
+    targetAudience: 'Educators, bootcamps, and universities',
+    useCase: 'A university professor assigns a complex capstone project. Instead of spending 50 hours grading, the AI pre-grades and leaves detailed code reviews for 500 students instantly.',
     icon: <Target size={32} />,
     color: 'violet',
     features: ['Automated Project Grading', 'Instant Logical Feedback', 'Continuous Assessment'],
-    isNew: false
+    isNew: false,
+    image: 'https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=800&q=80',
+    imgAlt: 'Intelligent assessment engine evaluating complex student projects'
   }
 ];
 
@@ -207,96 +255,65 @@ const ProductsView = () => {
             >
               <div className="product-detail-info">
                 <span className={`detail-status-tag ${product.isNew ? 'new' : ''}`}>
-                  {product.subtitle}
+                  {product.tagline}
                 </span>
-                <h2 className="detail-title">
-                  {index === 0 && "AI Tutor Platform for Personalized Learning"}
-                  {index === 1 && "Adaptive Learning AI Engine for Students"}
-                  {index === 2 && "Skill-Gap Analytics & AI Learning System"}
-                  {index === 3 && "Advanced AI Tutor Platform for Assessment"}
-                </h2>
+                <Link to={product.blogLink} style={{textDecoration: 'none'}}>
+                  <h2 className="detail-title">
+                    {product.title}
+                  </h2>
+                </Link>
                 
-                <p className="detail-description">
-                  {index === 0 && <>Eduqra’s AI-powered tutor platform connects students with intelligent learning systems and expert mentors to deliver personalized education at scale. Our system analyzes student behavior, learning pace, and knowledge gaps to provide real-time guidance and customized study plans. Unlike traditional video courses, our <Link to="/ai-solutions" className="context-link-inline">AI tutor platform</Link> ensures you are never alone in your journey, offering Socratic support that forces you to build robust mental models of complex technologies.</>}
-                  {index === 1 && <>Eduqra’s adaptive learning AI engine is the cognitive core of our ecosystem, designed to transform how students absorb complex information. Unlike traditional static curriculums, this <Link to="/ai-solutions" className="context-link-inline">AI learning system</Link> interprets billions of data points—from comprehension speed to logical patterns—to rewrite your educational journey in real-time. By utilizing advanced neural models, the engine ensures that every student receives a unique learning experience within our <strong>AI education platform</strong>.</>}
-                  {index === 2 && <>Take the guesswork out of career growth with Eduqra’s <Link to="/blog" className="context-link-inline">AI learning system for predictive analytics</Link>. Our platform provides deep-level insights into your cognitive landscape, revealing exactly where you stand against global industry standards. This sophisticated AI tutor platform companion uses heatmaps and predictive modeling to forecast your readiness for high-demand job roles. By identifying and highlighting hidden knowledge gaps, we empower students to focus their energy on the skills that offer the highest ROI.</>}
-                  {index === 3 && "Move beyond multiple-choice with the most advanced AI tutor platform for smart assessments. Eduqra’s assessment engine evaluates project-based submissions, complex coding logic, and descriptive reasoning using highly trained AI learning system models. This allows for continuous evaluation that mirrors real-world workplace challenges. Our adaptive learning AI ensures that assessments grow in difficulty as you improve, providing instant, deep-level feedback that explains the 'why' behind every logic correction."}
-                </p>
-
+                <div className="product-cro-block">
+                  <div className="problem-statement">
+                    <strong>The Problem:</strong> {product.problem}
+                  </div>
+                  <p className="detail-description">{product.description}</p>
+                </div>
+                
                 <div className="detail-split">
                   <div className="detail-points">
-                    <h3>Key Features:</h3>
+                    <h3>How it Works:</h3>
                     <ul>
-                      {product.features.map((feature, fIdx) => (
-                        <li key={fIdx}>
-                          <ArrowRight size={16} />
-                          <span>{feature}</span>
+                      {product.howItWorks.map((step, sIdx) => (
+                        <li key={sIdx}>
+                          <span className="step-circle">{step.step}</span>
+                          <span>{step.text}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                   
                   <div className="detail-points benefits">
-                    <h3>Benefits:</h3>
-                    <ul>
-                      {index === 0 && (
-                        <>
-                          <li><span>Faster concept understanding</span></li>
-                          <li><span>Improved academic performance</span></li>
-                          <li><span>Career-focused skill development</span></li>
-                        </>
-                      )}
-                      {index === 1 && (
-                        <>
-                          <li><span>Elimination of learning friction</span></li>
-                          <li><span>3x faster knowledge retention</span></li>
-                          <li><span>Stress-free academic progress</span></li>
-                        </>
-                      )}
-                      {index === 2 && (
-                        <>
-                          <li><span>Data-backed career confidence</span></li>
-                          <li><span>Optimized study time allocation</span></li>
-                          <li><span>Verified industry-standard skills</span></li>
-                        </>
-                      )}
-                      {index === 3 && (
-                        <>
-                          <li><span>Instant feedback loops</span></li>
-                          <li><span>Practical, hands-on expertise</span></li>
-                          <li><span>Deep-level logical understanding</span></li>
-                        </>
-                      )}
-                    </ul>
+                    <h3>Target Audience:</h3>
+                    <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', marginBottom: '1rem' }}>{product.targetAudience}</p>
+                    
+                    <h3>Real-World Use Case:</h3>
+                    <div style={{ background: 'var(--color-bg-light)', padding: '15px', borderRadius: '8px', fontSize: '0.85rem', color: 'var(--color-secondary)', borderLeft: '3px solid var(--color-primary)' }}>
+                      {product.useCase}
+                    </div>
                   </div>
                 </div>
 
                 <div className="detail-cta">
-                  <Link to="/contact" className="btn btn-primary">
-                    Get Early Access to {product.title}
+                  <Link to="/ai-solutions" className="btn btn-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                    Try {product.title} <ArrowRight size={16} />
                   </Link>
+                  <p style={{ marginTop: '10px', fontSize: '0.8rem', color: 'var(--color-text-muted)' }}>
+                    Learn more about our <Link to={product.blogLink} className="context-link-inline">{product.keyword}</Link>.
+                  </p>
                 </div>
               </div>
 
               <div className="product-detail-visual">
-                <div className="visual-container image-visual">
+                <div className="visual-container image-visual" style={{ padding: '2rem', background: 'var(--color-bg-light)', borderRadius: 'var(--radius-2xl)', border: '1px solid rgba(0,0,0,0.05)' }}>
                   <img 
                     loading="lazy" 
-                    src={
-                      index === 0 ? "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" :
-                      index === 1 ? "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80" :
-                      index === 2 ? "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" :
-                      "https://images.unsplash.com/photo-1507413245164-6160d8298b31?auto=format&fit=crop&w=800&q=80"
-                    } 
-                    alt={
-                      index === 0 ? "Eduqra AI tutor platform showing personalized student dashboard" :
-                      index === 1 ? "Adaptive learning AI system processing student data in real-time" :
-                      index === 2 ? "Skill-gap analytics visualization within the Eduqra AI learning platform" :
-                      "Intelligent assessment engine evaluating complex student projects"
-                    }
+                    src={product.image} 
+                    alt={product.imgAlt}
                     className="product-detail-img"
+                    style={{ borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)' }}
                   />
-                  <div className={`detail-visual-overlay ${product.color}`}></div>
+                  <div className={`detail-visual-overlay ${product.color}`} style={{ opacity: 0.1 }}></div>
                 </div>
               </div>
             </motion.div>

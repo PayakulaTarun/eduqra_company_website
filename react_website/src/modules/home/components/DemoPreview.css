@@ -1,0 +1,68 @@
+.demo-preview {
+  background-color: var(--color-bg-primary);
+  padding: var(--space-16) 0;
+}
+
+.demo-video-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-2xl);
+  border: 4px solid var(--color-bg-light);
+  position: relative;
+}
+
+.demo-mockup {
+  position: relative;
+  aspect-ratio: 16/9;
+  background-color: #e2e8f0;
+}
+
+.demo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.demo-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.demo-mockup:hover .demo-overlay {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+.play-button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.play-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.play-icon {
+  color: var(--color-primary);
+  margin-left: 6px;
+}

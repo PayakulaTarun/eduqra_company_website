@@ -22,7 +22,7 @@ const AboutStory = () => {
           <div className="story-visual-accent"></div>
           
           <div className="story-image-wrapper">
-            <img src="/images/eduqra_origin_engine.png" alt="Eduqra Intelligence Core" className="story-engine-image" />
+            <img src="/images/eduqra_origin_engine.png" alt="Eduqra Intelligence Core" className="story-engine-image" loading="lazy" />
           </div>
         </motion.div>
         

@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronRight } from 'lucide-react';
+import { Menu, X, ChevronRight, Search } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { logoutUser } from '../lib/firebase';
+import GlobalSearchModal from './GlobalSearchModal';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
   const { currentUser } = useAuth();
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   
   const isActive = (path) => location.pathname === path ? "active" : "";
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -29,11 +31,12 @@ const Navbar = () => {
   ];
 
   return (
-    <motion.nav 
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className="navbar glass-panel"
-    >
+    <>
+      <motion.nav 
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className="navbar glass-panel"
+      >
       <div className="container navbar-container">
         <Link to="/" className="logo">
           <img loading="lazy" src="/images/eduqra_logo.jpeg" alt="Eduqra" />
@@ -56,6 +59,9 @@ const Navbar = () => {
         </ul>
 
         <div className="nav-actions desktop-only">
+          <button onClick={() => setIsSearchOpen(true)} className="icon-btn search-trigger" aria-label="Search">
+            <Search size={20} />
+          </button>
           {currentUser ? (
             <button onClick={logoutUser} className="login-btn">Logout</button>
           ) : (
@@ -67,9 +73,14 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button className="mobile-menu-toggle" onClick={toggleMenu} aria-label="Toggle Menu">
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        <div className="mobile-only-actions">
+          <button onClick={() => setIsSearchOpen(!isSearchOpen)} className="icon-btn" aria-label="Search" style={{display: "inline-flex", background: "none", border: "none", color: "var(--text-color)"}}>
+            <Search size={24} />
+          </button>
+          <button className="mobile-menu-toggle" onClick={toggleMenu} aria-label="Toggle Menu" style={{marginLeft: 0}}>
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Drawer */}
@@ -107,6 +118,9 @@ const Navbar = () => {
         )}
       </AnimatePresence>
     </motion.nav>
+      {/* Global intelligent search modal */}
+      <GlobalSearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
+    </>
   );
 };
 

@@ -1,10 +1,7 @@
 User-agent: *
 Allow: /
-
-# Private/Utility Routes
 Disallow: /admin
-Disallow: /api/
-Disallow: /*?*
+Disallow: /profile
+Disallow: /private/
 
-# Sitemaps
 Sitemap: https://eduqra.com/sitemap.xml
