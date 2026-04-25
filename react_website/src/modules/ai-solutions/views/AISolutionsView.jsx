@@ -1,10 +1,36 @@
+import React, { useState } from 'react';
 import SEOManager from '../../../shared/components/SEOManager';
-import { motion } from 'framer-motion';
-import { Brain, BarChart, Zap, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Brain, BarChart, Zap, CheckCircle2, ShieldCheck, ChevronDown, Target, Rocket, LineChart, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './AISolutionsView.css';
 
 const AISolutionsView = () => {
+  const [openFaq, setOpenFaq] = useState(null);
+
+  const toggleFaq = (index) => {
+    setOpenFaq(openFaq === index ? null : index);
+  };
+
+  const faqItems = [
+    {
+      q: "What is an AI learning platform?",
+      a: "An AI learning platform is a next-generation educational ecosystem that uses artificial intelligence to adapt content, pace, and difficulty to each individual learner's unique needs in real-time."
+    },
+    {
+      q: "How does the AI tutor for students actually work?",
+      a: "Our AI tutor uses advanced AI models to explain concepts, answer questions using Socratic reasoning, and provide instant feedback on student work, simulating a private human mentor."
+    },
+    {
+      q: "Can AI education tools help in competitive exams?",
+      a: "Absolutely. AI education tools are designed to pinpoint high-yield topics and focus practice on your weakest areas, making them ideal for high-pressure competitive exam preparation."
+    },
+    {
+      q: "How do I start learning with AI?",
+      a: "Getting started is simple. Just click the 'Start Learning with AI' button, complete a quick skill assessment, and our platform will generate your personalized growth roadmap immediately."
+    }
+  ];
+
   return (
     <motion.main
       initial={{ opacity: 0 }}
@@ -321,51 +347,43 @@ const AISolutionsView = () => {
             </p>
           </motion.div>
 
-          <div className="faq-grid">
-            {[
-              {
-                q: "What is an AI learning platform?",
-                a: "An AI learning platform is a next-generation educational ecosystem that uses artificial intelligence to adapt content, pace, and difficulty to each individual learner's unique needs in real-time."
-              },
-              {
-                q: "How does AI personalize learning?",
-                a: "AI personalizes learning by analyzing your interactions, quiz results, and comprehension speed. It identifies your unique knowledge gaps and automatically re-routes your curriculum to ensure complete mastery."
-              },
-              {
-                q: "Is AI tutoring better than traditional learning?",
-                a: "AI tutoring complements traditional learning by providing 24/7 personalized support that traditional classrooms can't offer. It ensures constant 1-on-1 attention, leading to faster mastery."
-              },
-              {
-                q: "How does the AI tutor for students actually work?",
-                a: "Our AI tutor uses advanced AI models to explain concepts, answer questions using Socratic reasoning, and provide instant feedback on student work, simulating a private human mentor."
-              },
-              {
-                q: "Can AI education tools help in competitive exams?",
-                a: "Absolutely. AI education tools are designed to pinpoint high-yield topics and focus practice on your weakest areas, making them ideal for high-pressure competitive exam preparation."
-              },
-              {
-                q: "Is my data safe with Eduqra?",
-                a: "Yes. We use end-to-end encryption and comply with global privacy standards like GDPR. Your learning data and personal information are strictly secure and never sold to third parties."
-              },
-              {
-                q: "Do I still need human teachers?",
-                a: "Yes. We believe AI empowers teachers, not replaces them. AI handles the data and personalized drills, while human mentors provide the essential guidance, inspiration, and high-level strategy."
-              },
-              {
-                q: "How do I start learning with AI?",
-                a: "Getting started is simple. Just click the 'Start Learning with AI' button, complete a quick skill assessment, and our platform will generate your personalized growth roadmap immediately."
-              }
-            ].map((item, i) => (
+          <div className="faq-accordion-container">
+            {faqItems.map((item, i) => (
               <motion.div 
                 key={i}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="faq-item"
+                className={`faq-accordion-item ${openFaq === i ? 'active' : ''}`}
               >
-                <h3 className="faq-question">{item.q}</h3>
-                <p className="faq-answer">{item.a}</p>
+                <div 
+                  className="faq-accordion-header" 
+                  onClick={() => toggleFaq(i)}
+                >
+                  <h3 className="faq-question">
+                    <span className="faq-q-label">Q:</span>
+                    {item.q}
+                  </h3>
+                  <div className={`faq-icon ${openFaq === i ? 'rotate' : ''}`}>
+                    <ChevronDown size={20} />
+                  </div>
+                </div>
+                <AnimatePresence>
+                  {openFaq === i && (
+                    <motion.div 
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      className="faq-accordion-body"
+                    >
+                      <div className="faq-answer-inner">
+                        <p className="faq-answer">{item.a}</p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </motion.div>
             ))}
           </div>
@@ -388,33 +406,49 @@ const AISolutionsView = () => {
               </p>
 
               <div className="seo-benefits-grid">
-                <div className="seo-benefit-item">
-                  <h3>Hyper-Personalization</h3>
-                  <p>
-                    One of the core <strong>benefits of AI learning</strong> is its ability to listen. Unlike a static textbook, our AI analyzes your vocabulary, your speed of comprehension, and even the types of mistakes you make. It then rewrites your learning path in real-time, ensuring you never waste a second on concepts you already master.
-                  </p>
-                </div>
-                
-                <div className="seo-benefit-item">
-                  <h3>Unprecedented Learning Speed</h3>
-                  <p>
-                    AI doesn't just make learning better; it makes it faster. By identifying exactly where your knowledge gaps lie, the platform directs your focus where it matters most. Students using Eduqra report mastering complex technical subjects significantly faster than through traditional methods.
-                  </p>
-                </div>
-
-                <div className="seo-benefit-item">
-                  <h3>Data-Driven Analytics</h3>
-                  <p>
-                    Stop guessing your progress. Our predictive analytics provide a mirror to your cognitive growth. You'll see exactly which skills are industry-ready and which require more attention, backed by billions of data points gathered from global educational standards.
-                  </p>
-                </div>
-
-                <div className="seo-benefit-item">
-                  <h3>Universal Accessibility</h3>
-                  <p>
-                    Geography and wealth should not be barriers to elite education. Our AI tutor for students provides high-level mentorship 24/7, anywhere in the world. Whether you're in a bustling city or a remote village, you have the world's most intelligent learning engine at your fingertips.
-                  </p>
-                </div>
+                {[
+                  {
+                    icon: <Target size={28} />,
+                    title: 'Hyper-Personalization',
+                    desc: <>One of the core <strong>benefits of AI learning</strong> is its ability to listen. Unlike a static textbook, our AI analyzes your vocabulary, your speed of comprehension, and even the types of mistakes you make. It then rewrites your learning path in real-time, ensuring you never waste a second on concepts you already master.</>,
+                    colorClass: 'icon-purple'
+                  },
+                  {
+                    icon: <Rocket size={28} />,
+                    title: 'Unprecedented Learning Speed',
+                    desc: <>AI doesn't just make learning better; it makes it faster. By identifying exactly where your knowledge gaps lie, the platform directs your focus where it matters most. Students using Eduqra report mastering complex technical subjects significantly faster than through traditional methods.</>,
+                    colorClass: 'icon-blue'
+                  },
+                  {
+                    icon: <LineChart size={28} />,
+                    title: 'Data-Driven Analytics',
+                    desc: <>Stop guessing your progress. Our predictive analytics provide a mirror to your cognitive growth. You'll see exactly which skills are industry-ready and which require more attention, backed by billions of data points gathered from global educational standards.</>,
+                    colorClass: 'icon-green'
+                  },
+                  {
+                    icon: <Globe size={28} />,
+                    title: 'Universal Accessibility',
+                    desc: <>Geography and wealth should not be barriers to elite education. Our AI tutor for students provides high-level mentorship 24/7, anywhere in the world. Whether you're in a bustling city or a remote village, you have the world's most intelligent learning engine at your fingertips.</>,
+                    colorClass: 'icon-orange'
+                  }
+                ].map((benefit, idx) => (
+                  <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.1 }}
+                    className="seo-benefit-card"
+                  >
+                    <div className="seo-benefit-header">
+                      <div className={`seo-benefit-icon ${benefit.colorClass}`}>
+                        {benefit.icon}
+                      </div>
+                      <h3>{benefit.title}</h3>
+                    </div>
+                    <p>{benefit.desc}</p>
+                  </motion.div>
+                ))}
               </div>
 
               <div className="seo-summary-box">

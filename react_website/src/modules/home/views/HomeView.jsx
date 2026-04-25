@@ -87,7 +87,7 @@ const HomeView = () => {
       <section className="section bg-light text-center" style={{ padding: '4rem 0' }}>
         <div className="container">
           <h2 style={{ marginBottom: '1rem' }}>Ready to experience personalized education AI?</h2>
-          <p style={{ color: 'var(--color-text-muted)', marginBottom: '2rem', maxWidth: '600px', mx: 'auto' }}>
+          <p style={{ color: 'var(--color-text-muted)', margin: '0 auto 2rem auto', maxWidth: '600px' }}>
             Transform the way you learn with our smart learning system. 
           </p>
           <Link 

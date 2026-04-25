@@ -19,20 +19,13 @@
 
 .use-cases-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-6);
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
   margin-bottom: var(--space-12);
-}
-
-@media (min-width: 768px) {
-  .use-cases-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 @media (min-width: 1024px) {
   .use-cases-grid {
-    grid-template-columns: repeat(4, 1fr);
     gap: var(--space-8);
   }
 }
